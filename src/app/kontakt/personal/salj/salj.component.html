@@ -1,0 +1,22 @@
+<section id="comp-offer" class="team-p2" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 ">
+          <h2>Konstruktion & Försäljning</h2>
+          <div class="heading-border-light"></div> 
+        </div>
+      </div>  
+      <div class="row">  
+        <div class="col-md-4 col-sm-6 " *ngFor="let itm of mainSaljData">
+          <div class="team-p2-cont " data-wow-delay="0.2s">
+             <img [src]="itm.acf.bild" class="img-fluid" alt="{{itm.acf.namn}}">
+             <h5>{{itm.acf.namn}}</h5>
+             <h6>{{itm.acf.funktion}}</h6>
+             <h6>Tel.: {{itm.acf.telefon}}</h6>
+             <h6 *ngIf="itm.acf.mobil">Mobil.: {{itm.acf.mobil}}</h6>
+             <a href="mailto:{{itm.acf.epost}}"><i class="fa fa-envelope"></i> {{itm.acf.epost}}</a>               
+            </div>
+        </div>        
+      </div>
+    </div>
+</section>

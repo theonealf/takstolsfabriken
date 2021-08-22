@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row con-form">
+      
+      <div class="col-12 col-md-8" [formGroup]="kontaktForm">
+        <div class="col-12">
+          <label></label>
+          <input type="text" name="full-name" placeholder="Namn" class="form-control" formControlName="Namn">
+          <label></label>
+          <input type="text" name="email" placeholder="E-post" class="form-control" formControlName="Epost">          
+        </div>
+        <div class="col-md-12"><textarea name="Medelande" id="Medelande" formControlName="Medelande"></textarea></div>
+        <div class="col-md-12 sub-but"><button class="btn btn-general btn-white" role="button" (click)="skicka()" >Skicka</button></div>
+
+      </div>     
+      
+    </div>
+</div>

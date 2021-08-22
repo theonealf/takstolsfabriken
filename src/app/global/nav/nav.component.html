@@ -1,0 +1,53 @@
+<header id="headerblock" class="">
+
+    <!-- Top Navbar  -->
+    <div class="top-menubar ">
+      <div class="topmenu">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-10">
+              <ul id="page-top" class="list-inline top-contacts">
+                <li>
+                  <i class="fa fa-envelope"></i> E-post: <a href="mailto:info@timmele.com">info@timmele.com</a>
+                </li>
+                <li>
+                  <i class="fa fa-phone"></i> Växel: 0321-53 02 80
+                </li>
+                <li class="d-md-none d-lg-inline">
+                  <i class="fa fa-info" aria-hidden="true"></i> Takstolar CE-märkta enligt EN14250 Certifikatnummer SC 0212-10
+                </li>
+              </ul>
+            </div> 
+            <div class="col-md-3 col-lg-2">
+              <ul class="list-inline top-data">
+                
+                <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i> Facebook</a></li>
+                <!-- <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
+                <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>  -->
+                <!-- <li><a href="#" class="log-top" data-toggle="modal" data-target="#login-modal">Login</a></li>   -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light " id="mainNav" data-toggle="affix">
+      <div class="container pb-2" >
+        <a class="navbar-brand smooth-scroll" href="index.html">
+          <img src="../assets/img/logo-trans2.png" alt="logo">
+        </a> 
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> 
+              <span class="navbar-toggler-icon"></span>
+        </button>  
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto" >
+              <li class="nav-item" *ngFor="let itm of mainNavData">
+                <a class="nav-link smooth-scroll" routerLink="{{itm.acf.link}}" routerLinkActive="active" >{{itm.acf.linkname}}</a>
+              </li>              
+          </ul>  
+        </div>
+      </div>
+    </nav>
+  </header> 
