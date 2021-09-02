@@ -17,6 +17,9 @@ import { AdminComponent } from './kontakt/personal/admin/admin.component';
 import { SaljComponent } from './kontakt/personal/salj/salj.component';
 import { KontaktFormComponent } from './kontakt/kontakt-form/kontakt-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TakstolstyperDetaljComponent } from './takstolstyper/takstolstyper-detalj/takstolstyper-detalj.component';
+import { MainPagesComponent } from './main-pages/main-pages.component';
+import { Err404pageComponent } from './global/err404page/err404page.component';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
@@ -76,7 +79,10 @@ const cookieConfig:NgcCookieConsentConfig = {
     BassidaComponent,
     AdminComponent,
     SaljComponent,
-    KontaktFormComponent
+    KontaktFormComponent,
+    TakstolstyperDetaljComponent,
+    MainPagesComponent,
+    Err404pageComponent
   ],
   imports: [
     BrowserModule,  

@@ -27,6 +27,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
 html,
 body {
     height: 100%;
+   
 }
 
 body {
@@ -571,11 +572,11 @@ p {
 ======================================================*/
 
     .carousel-fade {
-        height: 60vh;
+        height: 60vh; /* använd 40vh om inte texten skall synas på första sidan*/
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        background-image: url(../img/fabriken_logo.jpg);
+        background-image: url(../img/fabriken_logo_ny6.jpg);
         min-height: 340px;
     }
 
@@ -590,17 +591,18 @@ p {
 
     .carousel-fade {
         position: relative;
-        height: 60vh;
+        height: 60vh; /* använd 40vh om inte texten skall synas på första sidan*/
     }
 
     .hero {
+        /* display:none; tar bort  texten på första sidan */
         position: absolute;
-        top: 45%;
+        top: 45%; /* använd 35% om inte texten skall synas på första sidan*/
         left: 50%;
         /* background: rgba(0, 0, 0, 0.7);
         background: rgb(44 104 146 / 72%); 
         background: rgb(26 65 93 / 85%);*/
-        background: rgb(26 65 93 / 40%);
+        background: rgb(26 65 93 / 20%);
         /* border: 5px solid #fff; */
         padding: 40px;
         z-index: 3;
@@ -1917,3 +1919,32 @@ p {
 .team-p2-cont h5{
     margin-top:.5rem;
 }
+
+.single-news-desc h2 {
+        font-size: 1.5rem !important;
+    } 
+
+.single-news-desc h3{
+        font-size: 1.1rem!important;
+    }  
+    .artikelbild{
+        text-align: center;
+        padding: 1rem;
+    }
+    .artikelbild img{    
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            max-width: 100%;
+            height: auto;
+        }
+
+    .artikelbild h1,.artikelbild h2, .artikelbild h3, .artikelbild h4, .artikelbild h5,.artikelbild h6{
+        text-align: left;
+        padding-top: 1rem;
+    }
+    .artikelbild p{
+        text-align: left;
+        padding-top: 0rem;
+    }
+            
+  

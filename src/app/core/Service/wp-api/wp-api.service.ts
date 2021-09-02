@@ -30,8 +30,8 @@ export class WpApiService extends BaseApiService{
   }
 
   getPageSlug(slug:any){
-    let url:string = this._global.server +"content_main?slug="+slug;
-    // console.log("getPageSlug URL: " + url);
+    let url:string = this._global.server +"main_page?slug="+slug;
+     console.log("getPageSlug URL: " + url);
     return this.getPosts(url);
   }
 

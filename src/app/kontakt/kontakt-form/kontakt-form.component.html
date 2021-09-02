@@ -5,11 +5,17 @@
         <div class="col-12">
           <label></label>
           <input type="text" name="full-name" placeholder="Namn" class="form-control" formControlName="Namn">
+          <span *ngIf="Namn && !Namn.valid && (Namn.dirty || Namn.touched)">Du måste fylla i namn </span>
           <label></label>
-          <input type="text" name="email" placeholder="E-post" class="form-control" formControlName="Epost">          
+          <input type="text" name="email" placeholder="E-post" class="form-control" formControlName="Epost"> 
+          <span *ngIf="Epost && !Epost.valid && (Epost.dirty || Epost.touched) && !Epost.hasError('email')">Du måste fylla i E-postadress </span>     
+          <span *ngIf="Epost && !Epost.valid && Epost.hasError('email')">Du måste fylla i korrekt E-postadress </span>    
         </div>
-        <div class="col-md-12"><textarea name="Medelande" id="Medelande" formControlName="Medelande"></textarea></div>
-        <div class="col-md-12 sub-but"><button class="btn btn-general btn-white" role="button" (click)="skicka()" >Skicka</button></div>
+        <div class="col-md-12">
+          <textarea name="Medelande" id="Medelande" formControlName="Medelande"></textarea>
+          <span *ngIf="Medelande && !Medelande.valid && (Medelande.dirty || Medelande.touched)">Du måste fylla i E-postadress </span>   
+        </div>          
+        <div class="col-md-12 sub-but"><button class="btn btn-general btn-dark" role="button" (click)="skicka()" [disabled]="!kontaktForm.valid" title="Skicka" >Skicka</button></div>
 
       </div>     
       

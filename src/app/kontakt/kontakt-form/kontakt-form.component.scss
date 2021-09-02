@@ -84,3 +84,6 @@ License URL: https://creativecommons.org/licenses/by/4.0/
             color: #717171;
         }
     }
+    .form-control.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+        border:1px solid red;
+    }

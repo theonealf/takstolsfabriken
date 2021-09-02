@@ -61,17 +61,17 @@ License URL: https://creativecommons.org/licenses/by/4.0/
             console.log("scrollTop: " + scrollTop);
             if (scrollTop > 80) {
                 
-                $('.top-menubar').hide();
-                $('#headerblock').addClass('fixed-top')
+                // $('.top-menubar').hide();
+                $('#headerblock').addClass('sticky-top')
             } else {
-                if ($(this).width() > 990) {
+                if ($(this).width() > 2990) {
 
                     $('.top-menubar').show(500);
                 
                     }
                 
                 
-                $('#headerblock').removeClass('fixed-top')
+                $('#headerblock').removeClass('sticky-top')
             }
             
         });

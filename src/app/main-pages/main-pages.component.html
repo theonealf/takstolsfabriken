@@ -1,0 +1,34 @@
+<div id="home-p" class="home-p pages-head1 text-center">
+    <div class="container">
+        <h1>{{mainPageData[0].acf.rubrik}}</h1>
+        <p>{{mainPageData[0].acf.underrubrik}}</p>
+    </div>
+    <!--/end container-->
+</div>
+
+<!--====================================================
+                      NEWS DETAILS
+======================================================--> 
+<section id="single-news-p1" class="single-news-p1">
+    <div class="container">
+      <div class="row">
+
+        <!-- left news details -->
+        <div class="col-md-8">
+          <div class="single-news-p1-cont">
+           
+            <div class="single-news-desc" [innerHTML]="mainPageData[0].acf.maincontent">                    
+            </div>
+          </div>  
+          <hr>
+        </div>
+
+        <!-- Right news details -->
+        <div class="col-md-4">
+          <div class="small-news-box artikelbild" [innerHTML]="mainPageData[0].acf.rightcontent">            
+          </div>
+         
+        </div> 
+      </div>
+    </div>
+  </section>
