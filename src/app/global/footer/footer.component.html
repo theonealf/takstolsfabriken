@@ -17,11 +17,10 @@
                 <div class="col-md-3 col-sm-6 ">
                   <div class="heading-footer"><h2>Meny</h2></div>
                   <ul class="list-unstyled link-list">
-                    <li><a routerLink="/hem">Hem</a><i class="fa fa-angle-right"></i></li> 
-                    <li><a routerLink="/offert">Offert</a><i class="fa fa-angle-right"></i></li> 
-                    <li><a routerLink="/takstolstyper">Takstolstyper</a><i class="fa fa-angle-right"></i></li> 
-                    <li><a routerLink="/kvalitemiljo">Kvalité och miljö</a><i class="fa fa-angle-right"></i></li> 
-                    <li><a routerLink="/kontakt">Kontakta oss</a><i class="fa fa-angle-right"></i></li> 
+                    <li class="nav-item" *ngFor="let itm of mainNavData">
+                      <a routerLink="{{itm.acf.link}}">{{itm.acf.linkname}} <i class="fa fa-angle-right" aria-hidden="true"></i></a> 
+                    </li> 
+                    
                   </ul>
                 </div>
                 <!-- End Recent list -->
@@ -65,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <a href="#page-top" id="back-to-top" class="btn btn-sm btn-green btn-back-to-top smooth-scrolls hidden-sm hidden-xs" title="home" role="button">
+        <a href="" (click)="onClickScroll('headerblock')" id="back-to-top" class="btn btn-sm btn-green btn-back-to-top smooth-scrolls hidden-sm hidden-xs" title="home" role="button">
             <i class="fa fa-angle-up"></i>
         </a>
     </footer>

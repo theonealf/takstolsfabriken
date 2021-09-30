@@ -11,7 +11,9 @@
 /*====================================================
                   BUTTON (Generic)
 ======================================================*/
-
+html{
+    scroll-behavior: smooth;
+} 
 .btn-general {
     background-color: transparent;
     text-align: center;
@@ -64,6 +66,7 @@
 }
  
 .btn-back-to-top {
+    z-index: 9999;
     position: fixed;
     bottom: 20px;
     right: 20px;
