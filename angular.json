@@ -31,15 +31,15 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/cookieconsent/build/cookieconsent.min.css",
-              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/cookieconsent/build/cookieconsent.min.css",              
+              "./src/assets/css/bootstrap/bootstrap.min.css",
               "src/styles.scss"              
             ],
             "scripts": [
               "./node_modules/cookieconsent/build/cookieconsent.min.js",
-              "./node_modules/jquery/dist/jquery.js",
-              "./node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/jquery/dist/jquery.js",            
+              "./src/assets/js/popper/popper.min.js",
+              "./src/assets/js/bootstrap/bootstrap.min.js",
               "./src/assets/js/wow/wow.min.js",
               "./src/assets/js/owl-carousel/owl.carousel.min.js",
               "./src/assets/js/jquery-easing/jquery.easing.min.js",
@@ -105,15 +105,15 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/cookieconsent/build/cookieconsent.min.css",
-              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/cookieconsent/build/cookieconsent.min.css",              
+              "./src/assets/css/bootstrap/bootstrap.min.css",
               "src/styles.scss"              
             ],
             "scripts": [
               "./node_modules/cookieconsent/build/cookieconsent.min.js",
-              "./node_modules/jquery/dist/jquery.js",
-              "./node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/jquery/dist/jquery.js",            
+              "./src/assets/js/popper/popper.min.js",
+              "./src/assets/js/bootstrap/bootstrap.min.js",
               "./src/assets/js/wow/wow.min.js",
               "./src/assets/js/owl-carousel/owl.carousel.min.js",
               "./src/assets/js/jquery-easing/jquery.easing.min.js",

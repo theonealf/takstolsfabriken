@@ -62,7 +62,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
  
     .career-p2-bg{  
         height: 250px;
-        background-image: url(../img/thought-bg.jpg);  
+        background-image: url(../img/Bildertakstolsfabriken/DSC_5498.jpg);  
         padding:0;
         margin: 0;
     } 
@@ -119,7 +119,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
 
     .career-p2-bg{  
         height: 400px;
-        background-image: url(../img/thought-bg.jpg);  
+        background-image: url(../img/Bildertakstolsfabriken/DSC_5498.jpg);  
         padding:0;
         margin: 0;
     } 
@@ -252,4 +252,117 @@ License URL: https://creativecommons.org/licenses/by/4.0/
         -webkit-transition: all .5s ease-in-out;
         transition: all .5s ease-in-out; 
     }
+}
+
+
+/*====================================================
+                       CAREER-P4
+======================================================*/
+ 
+.career-p4-bg{  
+    height: 250px;
+    background-image: url(../img/Bildertakstolsfabriken/DSC_5485.jpg);  
+    padding:0;
+    margin: 0;
+} 
+
+.title-bar-career-p4{
+    padding:50px;
+}
+
+.overlay-career-p4{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    background: rgba(59, 59, 60, 0.53);
+}
+
+.title-bar-career-p4 h1{
+    color: #fff;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    background: rgba(200,200,200,0.6);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin-left: 120px;
+}
+.title-bar-career-p4 p{
+    padding:20px 200px 0 0;
+    color:#fff;
+    font-size: 17px;
+    text-align: left;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+.title-bar-career-p4 h1{
+    color: #fff;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.title-bar-career-p4 p{
+    padding:20px 50px 0 0;
+    color:#fff;
+    font-size: 17px;
+}
+}
+
+@media(max-width: 767px){
+
+.career-p4-bg{  
+    height: 400px;
+    background-image: url(../img/Bildertakstolsfabriken/DSC_5491.jpg);
+    padding:0;
+    margin: 0;
+} 
+.career-p4-bg
+.title-bar-career-p4{
+    padding:50px;
+}
+
+.overlay-career-p4{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background: rgba(59, 59, 60, 0.53);
+}
+
+.career-p4-bg h2{
+    color: #fff;
+   
+}
+
+.title-bar-career-p4 p{
+    padding:20px 0px 0 0;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+}    
+}
+
+@media (max-width: 420px){
+.career-p4-bg{  
+    height: 520px;
+    background-image: url(../img/thought-bg.jpg);  
+    padding:0;
+    margin: 0;
+} 
+
+.title-bar-career-p4{
+    padding:50px 20px;
+}
+
+.overlay-career-p4{
+    position: absolute;
+    width: 100%;
+    height: 520px;
+    background: rgba(59, 59, 60, 0.53);
+} 
 }

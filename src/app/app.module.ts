@@ -20,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TakstolstyperDetaljComponent } from './takstolstyper/takstolstyper-detalj/takstolstyper-detalj.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 import { Err404pageComponent } from './global/err404page/err404page.component';
+import { OmossComponent } from './omoss/omoss.component';
+import { TillverkningComponent } from './tillverkning/tillverkning.component';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
@@ -82,7 +84,9 @@ const cookieConfig:NgcCookieConsentConfig = {
     KontaktFormComponent,
     TakstolstyperDetaljComponent,
     MainPagesComponent,
-    Err404pageComponent
+    Err404pageComponent,
+    OmossComponent,
+    TillverkningComponent
   ],
   imports: [
     BrowserModule,  

@@ -27,11 +27,10 @@ License URL: https://creativecommons.org/licenses/by/4.0/
 html,
 body {
     height: 100%;
-   
 }
 
 body {
-    font-family: 'Raleway', sans-serif!important;
+    font-family: 'Raleway', sans-serif;
 }  
 
 h1, h2, h3, h4, h5 {
@@ -533,15 +532,15 @@ p {
 
     .btn-white {
         border-color: #2196f3;
-        background-color: #2196f3;
-        color: #fff;
+        color: #2196f3;
+        background-color: #fff;
     }
 
     .btn-white:hover,
     .btn-white:focus {
-        background-color: transparent;
+        background-color: #2196f3;
         color: #fff;
-        cursor: pointer;
+        cursor: pointer;      
     }
 
     .btn-white_box {
@@ -550,72 +549,76 @@ p {
     }
     .btn-white_box:hover,
     .btn-white_box:focus {
+        /* background-color: #2196f3;
+        color: #fff; */
+        cursor: pointer;
+        border-color: #2196f3;
+        color: #2196f3;
+        background-color: #fff;
+    }
+
+    .btn-green {        
         background-color: #2196f3;
         color: #fff;
         cursor: pointer;
-    }
-
-    .btn-green {
-        border-color: #2196f3;
-        color: #2196f3;
     }
 
     .btn-green:hover,
     .btn-green:focus {
-        background-color: #2196f3;
-        color: #fff;
-        cursor: pointer;
+        border-color: #2196f3;
+        color: #2196f3;
+        background-color: #fff;
     }
      
 /*====================================================
                        HOME
 ======================================================*/
 
-    .carousel-fade {
-        height: 60vh; /* använd 40vh om inte texten skall synas på första sidan*/
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-image: url(../img/fabriken_logo_ny6.jpg);
-        min-height: 340px;
-    }
+.carousel-fade {
+    height: 40vh; /* använd 40vh om inte texten skall synas på första sidan*/
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/fabriken_logo_ny5.jpg);
+    min-height: 450px;
+}
 
-    .carousel-fade .carousel-inner .carousel-item {
-        -webkit-transition-property: opacity;
-        transition-property: opacity;
-    }
+.carousel-fade .carousel-inner .carousel-item {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+}
 
-    .carousel-fade .carousel-control {
-        z-index: 2;
-    }
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
 
-    .carousel-fade {
-        position: relative;
-        height: 60vh; /* använd 40vh om inte texten skall synas på första sidan*/
-    }
+.carousel-fade {
+    position: relative;
+    height: 40vh; /* använd 40vh om inte texten skall synas på första sidan*/
+}
 
-    .hero {
-        /* display:none; tar bort  texten på första sidan */
-        position: absolute;
-        top: 45%; /* använd 35% om inte texten skall synas på första sidan*/
-        left: 50%;
-        /* background: rgba(0, 0, 0, 0.7);
-        background: rgb(44 104 146 / 72%); 
-        background: rgb(26 65 93 / 85%);*/
-        background: rgb(26 65 93 / 20%);
-        /* border: 5px solid #fff; */
-        padding: 40px;
-        z-index: 3;
-        color: #fff;
-        text-align: center;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0);
-        -webkit-transform: translate3d(-50%, -50%, 0);
-        -moz-transform: translate3d(-50%, -50%, 0);
-        -ms-transform: translate3d(-50%, -50%, 0);
-        -o-transform: translate3d(-50%, -50%, 0);
-        transform: translate3d(-50%, -50%, 0);
-    }
+.hero {
+    /* display:none; tar bort  texten på första sidan */
+    position: absolute;
+    top: 45%; /* använd 35% om inte texten skall synas på första sidan*/
+    left: 50%;
+    /* background: rgba(0, 0, 0, 0.7);
+    background: rgb(44 104 146 / 72%); 
+    background: rgb(26 65 93 / 85%);*/
+    background: rgb(26 65 93 / 20%);
+    /* border: 5px solid #fff; */
+    padding: 40px;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
 
     .hero h1 {
         font-size: 3.5em;
@@ -773,7 +776,7 @@ p {
       }
 
       .home-p.pages-head2 {
-        background: url(../img/img/banner-2.jpg) no-repeat;
+        background: url(../img/Bildertakstolsfabriken/DSC_5531.jpg) no-repeat;
         background-size: cover;
         background-position: center center;
       } 
@@ -852,10 +855,22 @@ p {
         font-weight: 700;
         margin: 20px auto 10px auto;
     }
+    .title-bar h2 {
+        color: #41464b;
+        text-align: center;
+        font-weight: 700;
+        margin: 20px auto 10px auto;
+    }
 
     .title-bar .heading-border {
         width: 60px;
         height: 10px;
+        background-color: #2196f3;
+        margin: 0 auto 20px auto;
+    }
+    .title-bar .heading-border2 {
+        width: 60px;
+        height: 6px;
         background-color: #2196f3;
         margin: 0 auto 20px auto;
     }
@@ -1132,7 +1147,7 @@ p {
         font-size: 1rem;
     }
 
-    .story-descb {
+    .story-descb,.story-descb-start {
         padding: 10px 10px 30px 10px;
         margin: 30px 0;
         background: #f7f7f7;
@@ -1142,7 +1157,7 @@ p {
         border:1px solid #999;
     }
 
-    .story-descb:hover {
+    .story-descb:hover, .story-descb-start:hover {
         box-shadow: 2px 2px 6px 1px rgba(158, 158, 158, 0.77);
         border-bottom: 5px solid #2196f3;
         margin-top: 55px;
@@ -1244,8 +1259,8 @@ p {
         width: 100%;
         height: 400px;
         background: rgba(33, 150, 243, 0.53); 
-    }
-*/
+    }*/
+
     #thought .title-bar {
         padding: 50px 0;
     }
@@ -1697,7 +1712,7 @@ p {
 ======================================================*/
 
     .contact-h-bg {
-        background-image: url(../img/contact-bg.jpg);
+        background-image: url(../img/Bildertakstolsfabriken/DSC_5605.jpg);
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1919,32 +1934,99 @@ p {
 .team-p2-cont h5{
     margin-top:.5rem;
 }
+.single-news-p1-cont p{
+    font-size: 1.3rem;
+}
+.bg-chathams{
+    color:#fff;
+}
+.bg-chathams h4{
+    color:#fff;
+}
+.heading-border-light_white{
+    background-color: #fff;
+}
+.pages-head1 a{
+    color: #fff;
+}
 
-.single-news-desc h2 {
-        font-size: 1.5rem !important;
-    } 
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+  }
 
-.single-news-desc h3{
-        font-size: 1.1rem!important;
-    }  
-    .artikelbild{
-        text-align: center;
-        padding: 1rem;
-    }
-    .artikelbild img{    
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            max-width: 100%;
-            height: auto;
-        }
+.story-descb img, .story-descb-start img{
+    text-align: center;
+}
+.story-descb p, .story-descb-start p{
+    text-align: left;
+   
+    margin:0;
+    color:#fff;
+}
 
-    .artikelbild h1,.artikelbild h2, .artikelbild h3, .artikelbild h4, .artikelbild h5,.artikelbild h6{
-        text-align: left;
-        padding-top: 1rem;
-    }
-    .artikelbild p{
-        text-align: left;
-        padding-top: 0rem;
-    }
-            
-  
+.story-descb h2, .story-descb h3, .story-descb-start h2, .story-descb-start h3{ 
+    color:#fff;
+    text-align: left;
+}
+ .story-descb h3{
+    font-size: 1.3rem;
+}
+
+.cardbody, .cardbody-start{
+    text-align: left!important;
+    margin-top: 1rem;
+    margin-left:1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+   background-color:#0076c0;
+}
+
+.story-descb a,.story-descb-start a{
+    display: flex;
+  align-items: right;
+  justify-content: right;
+  color:#fff;
+  margin-top: 1rem;
+}
+.story-descb{
+    padding:0px;
+    background-color:#0076c0;
+}
+.cardbody .fa-arrow-circle-o-right, .cardbody-start .fa-arrow-circle-o-right{
+    margin-right:.25rem;
+    margin-left: .25rem;
+    margin-top: .2rem;
+}
+.story-descb-start{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding:0px;
+    background-image: url(../img/takstolstillverkning4.jpg);
+    min-height: 400px;
+    display: flex;
+    justify-content:flex-end;
+}
+.story-descb-start:hover{
+    margin-top:10px;
+}
+.story-descb:hover{
+    margin-top:45px;
+}
+.cardbody-start{
+    align-items: flex-end;
+    
+    text-align: left!important;
+    padding-top: 1rem;
+    padding-left:1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    background-color:#0076c0;           
+    width: 50%;
+    margin: 0px;  
+    margin-left: 1rem; 
+    margin-top: 250px;
+}
+.desc-comp-offer-cont{
+    background-color: #fff;
+}
