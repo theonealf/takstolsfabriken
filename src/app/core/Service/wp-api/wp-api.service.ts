@@ -29,11 +29,24 @@ export class WpApiService extends BaseApiService{
     return this.getPosts(url);
   }
 
+  getBasSidaCategory(catid:number){
+    let url:string = this._global.server +"bassida?categories=" +catid + "&filter[orderby]=date&order=asc";
+     console.log("getBasSidaCategory URL: " + url);
+    return this.getPosts(url);
+  }
+
+  getBasSidaByNamn(catnamn:string){
+    let url:string = this._global.server +"bassida?slug=" +catnamn + "&filter[orderby]=date&order=asc";
+     console.log("getBasSidaCategory URL: " + url);
+    return this.getPosts(url);
+  }
+
   getPageSlug(slug:any){
     let url:string = this._global.server +"main_page?slug="+slug;
      console.log("getPageSlug URL: " + url);
     return this.getPosts(url);
   }
+
 
   postRegisterUser(formdata:any){
     let url:string = this._global.postserver +"?post_type=RegisterUser";

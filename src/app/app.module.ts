@@ -22,6 +22,7 @@ import { MainPagesComponent } from './main-pages/main-pages.component';
 import { Err404pageComponent } from './global/err404page/err404page.component';
 import { OmossComponent } from './omoss/omoss.component';
 import { TillverkningComponent } from './tillverkning/tillverkning.component';
+import { MainBlockComponent } from './basblock/main-block/main-block.component';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
@@ -86,7 +87,8 @@ const cookieConfig:NgcCookieConsentConfig = {
     MainPagesComponent,
     Err404pageComponent,
     OmossComponent,
-    TillverkningComponent
+    TillverkningComponent,
+    MainBlockComponent
   ],
   imports: [
     BrowserModule,  

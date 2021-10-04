@@ -1,0 +1,192 @@
+<!--====================================================
+                       Top block
+======================================================-->
+<div id="home-p" class="home-p pages-head1 text-center" *ngIf="valPageblock.topblockval">
+    <div class="container">
+      <h1 class="wow fadeInUp" data-wow-delay="0.1s" [innerHtml]="valPageblock.toprubrik"></h1>
+      <p [innerHtml]="valPageblock.topunderrubrik"></p>
+    </div><!--/end container-->
+</div> 
+
+
+<!--====================================================
+                    Bild till vänster block
+======================================================-->
+<section id="Takstolar" class="business-growth-p1" *ngIf="valPageblock.textleft">
+    <div class="container">        
+        <div class="row" [ngClass]="valPageblock.rubrik ? 'padb-3 padt-6' : 'pb-0 pt-0'" >
+            
+            <div class="col-md-6">
+                <div class="single-news-p1-cont" >
+                    <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
+                        <h2 [innerHtml]="valPageblock.rubrik"></h2>
+                        
+                        <div class="heading-border-light" *ngIf="valPageblock.rubrik" ></div>
+                        
+                        <div [innerHtml]="valPageblock.content"></div>
+                        
+                        <i class="fa fa-spinner fa-spin fa-3x fa-fw" *ngIf="!valPageblock.rubrik && !valPageblock.content"></i>
+                        <span class="sr-only">Laddar ...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">                  
+                <img *ngIf="valPageblock.bild1.url" src="{{valPageblock.bild1.url}}" alt="{{valPageblock.bild1.url}}" loading="lazy" class="img-fluid">                  
+                <img *ngIf="valPageblock.bild2.url" src="{{valPageblock.bild2.url}}" alt="{{valPageblock.bild2.url}}" loading="lazy" class="img-fluid mt-4">        
+            </div> 
+        </div>
+    </div>
+</section>  
+
+
+<!--====================================================
+                    Bild till höger Block
+======================================================-->
+<section id="maskinhallar" class="business-growth-p1" *ngIf="!valPageblock.textleft">
+    <div class="container">
+        <div class="row" [ngClass]="valPageblock.rubrik ? 'padb-3 padt-6' : 'pb-0 pt-0'">
+            <div class="col-md-6">
+                <img *ngIf="valPageblock.bild1.url" src="{{valPageblock.bild1.url}}" alt="{{valPageblock.bild1.url}}" loading="lazy" class="img-fluid ">                  
+                <img *ngIf="valPageblock.bild2.url" src="{{valPageblock.bild2.url}}" alt="{{valPageblock.bild2.url}}" loading="lazy" class="img-fluid mt-4">                     
+            </div> 
+            <div class="col-md-6">
+                <div class="single-news-p1-cont" >
+                    <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
+                        <h2 [innerHtml]="valPageblock.rubrik"></h2>
+                        <div class="heading-border-light" *ngIf="valPageblock.rubrik"></div>                            
+                        <div [innerHtml]="valPageblock.content"></div>
+                        
+                        <i class="fa fa-spinner fa-spin fa-3x fa-fw" *ngIf="!valPageblock.rubrik && !valPageblock.content"></i>
+                        <span class="sr-only">Laddar ...</span>
+
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+</section>   
+
+
+<!--====================================================
+                        Listning med rubrik
+======================================================-->   
+
+  
+<!--====================================================
+                Listning 4 items utan bakgrundsfärg
+======================================================-->   
+<section *ngIf="valPageblock.bildblockval">    
+    <div class="container">
+        <!-- <hr>     -->
+        <div class="row mb-5 pb-5">            
+            <div class="col-md-3 col-sm-6" >
+                <div class="story-descb1">
+                    <img src="../assets/img/Bildertakstolsfabriken/DSC_5509.jpg" class="img-fluid" alt="...">                     
+                </div>          
+            </div>  
+            <div class="col-md-3 col-sm-6" >
+                <div class="story-descb1">
+                    <img src="../assets/img/Bildertakstolsfabriken/DSC_5509.jpg" class="img-fluid" alt="...">                     
+                </div>          
+            </div>   
+            <div class="col-md-3 col-sm-6" >
+                <div class="story-descb1">
+                    <img src="../assets/img/Bildertakstolsfabriken/DSC_5509.jpg" class="img-fluid" alt="...">                     
+                </div>          
+            </div>   
+            <div class="col-md-3 col-sm-6" >
+                <div class="story-descb1">
+                    <img src="../assets/img/Bildertakstolsfabriken/DSC_5509.jpg" class="img-fluid" alt="...">                     
+                </div>          
+            </div>                     
+        </div>   
+    </div> 
+</section>
+
+<!--====================================================
+                        Listning 3 items
+======================================================-->    
+<section *ngIf="valPageblock.bildblock3val" >    
+    <div class="container">        
+        <div class="row mb-5  pb-5">            
+            <div class="col-md-4 col-sm-6" >
+                <div class="story-descb1"> 
+                <img src="../assets/img/Bildertakstolsfabriken/IMG_1262.JPG" class="img-fluid" alt="...">                       
+                </div>          
+            </div>        
+            <div class="col-md-4 col-sm-6" >
+                <div class="story-descb1">
+                    <img src="../assets/img/Bildertakstolsfabriken/IMG_1245.JPG" class="img-fluid" alt="...">                     
+                </div>          
+            </div>      
+            <div class="col-md-4 col-sm-6 "> 
+                <div class="story-descb1">
+                    <img src="../assets/img/Bildertakstolsfabriken/IMG_1281.JPG" class="img-fluid" alt="...">                                  
+                </div>
+            </div>    
+            <!-- <hr>     -->
+        </div>
+    </div> 
+</section>
+
+<!--====================================================
+                        Mer infoblock
+======================================================-->
+<section *ngIf="valPageblock.merinfoblock" >
+    <div class="container">
+        <div class="row mt-4 mb-4 pb-3" >
+            <div class="col-md-8">
+              <div class="single-news-p1-cont" >                
+                <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
+                  <h4>Forum för information och rådgivning.</h4>
+                  <div class="heading-border-light"></div>
+                  <p>En samrådsgrupp är inrättad och består av representanter för tillverkare av takstolar och spikplåtar, beräkningsbyråer, berörda myndigheter samt SP. Gruppen har till uppgift att
+                    - ta till vara den kunskap som finns inom området
+                    - verka för en effektiv erfarenhetsåterföring
+                    - samt bidra till en samordnad information om trätakstolar
+                    </p>                 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <img src="../assets/img/kagerodl1.jpg" class="img-fluid" alt="...">      
+            </div> 
+        </div>
+    </div>  
+</section>    
+
+<!--====================================================
+                    Kontakta/ offert block
+======================================================-->
+<section class="al-cta-flat" *ngIf="valPageblock.kontaktblock" >
+    <div class="container">
+        <div class="row" style="padding-bottom:3rem;padding-top:3rem;">
+            <div class="col-sm-12">
+                <div class="al-cta-box text-center">
+                    <h2>Kontakta oss direkt</h2>
+                    <p class="mt-3">Kontakta oss och begär offert så tillverkar vi en takstol som passar dina önskemål </p>
+                    <a href="#" class="btn btn-info btn-lg py-2 px-5 mt-4 ml-1 mr-1 font-weight-bold">Kontakta oss! </a>
+                    <a href="#" class="btn btn-success btn-lg py-2 px-5 mt-4 ml-1 mr-1 font-weight-bold">Begär offert! </a>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section>
+  
+<!--====================================================
+                          CE Märkningsblock
+======================================================-->
+<div class="overlay-career-p2" *ngIf="valPageblock.ce_block" ></div>
+<section id="thought" class="bg-parallax career-p2-bg mb-0" *ngIf="valPageblock.ce_block" >
+    <div class="container">
+        <div id="row" class="row title-bar-career-p2">
+        <div class="col-md-4 ">
+            <h1>CE</h1>
+        </div>  
+        <div class="col-md-8 ">
+            <p >Vi på timmele takstolsfabrik tillverkar CE-märkta takstolar! CE märkning är ett krav från 1 oktober 2010.
+            Certifikatnummer SC 0212-10</p>
+        </div> 
+        </div>
+    </div>         
+</section> 

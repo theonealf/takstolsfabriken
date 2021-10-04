@@ -1,1 +1,3 @@
-<p>bassida works!</p>
+<div *ngFor="let itm of htmlPageData">    
+<app-main-block [requestedPage]="itm.slug" ></app-main-block>
+</div>

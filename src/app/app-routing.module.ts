@@ -1,3 +1,4 @@
+import { BassidaComponent } from './bassida/bassida.component';
 import { OmossComponent } from './omoss/omoss.component';
 import { OffertComponent } from './offert/offert.component';
 import { TillverkningComponent } from './tillverkning/tillverkning.component';
@@ -19,6 +20,7 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   {path: 'hem', component: HemComponent},
+  {path: 'bas', component: BassidaComponent},
   {path: 'kontakt', component: KontaktComponent},
   {path: 'tillverkning', component: TillverkningComponent},
   {path: 'offert', component: OffertComponent},
