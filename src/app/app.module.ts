@@ -23,6 +23,8 @@ import { Err404pageComponent } from './global/err404page/err404page.component';
 import { OmossComponent } from './omoss/omoss.component';
 import { TillverkningComponent } from './tillverkning/tillverkning.component';
 import { MainBlockComponent } from './basblock/main-block/main-block.component';
+import { ListblockComponent } from './basblock/listblock/listblock.component';
+import { BildblockComponent } from './basblock/listtyper/bildblock/bildblock.component';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
@@ -88,7 +90,9 @@ const cookieConfig:NgcCookieConsentConfig = {
     Err404pageComponent,
     OmossComponent,
     TillverkningComponent,
-    MainBlockComponent
+    MainBlockComponent,
+    ListblockComponent,
+    BildblockComponent
   ],
   imports: [
     BrowserModule,  

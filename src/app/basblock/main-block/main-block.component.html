@@ -1,20 +1,19 @@
 <!--====================================================
                        Top block
 ======================================================-->
-<div id="home-p" class="home-p pages-head1 text-center" *ngIf="valPageblock.topblockval">
+<div id="blockid_{{blockid}}" class="home-p pages-head1 text-center" *ngIf="valPageblock.topblockval">
     <div class="container">
       <h1 class="wow fadeInUp" data-wow-delay="0.1s" [innerHtml]="valPageblock.toprubrik"></h1>
       <p [innerHtml]="valPageblock.topunderrubrik"></p>
     </div><!--/end container-->
 </div> 
 
-
 <!--====================================================
                     Bild till vänster block
 ======================================================-->
-<section id="Takstolar" class="business-growth-p1" *ngIf="valPageblock.textleft">
+<section class="business-growth-p1" [ngClass]="stylehandler(valPageblock.style_main)" *ngIf="valPageblock.textleft">
     <div class="container">        
-        <div class="row" [ngClass]="valPageblock.rubrik ? 'padb-3 padt-6' : 'pb-0 pt-0'" >
+        <div class="row" [ngClass]="valPageblock.rubrik ? 'pb-3 padt-6' : 'pb-0 pt-0'" >
             
             <div class="col-md-6">
                 <div class="single-news-p1-cont" >
@@ -42,9 +41,9 @@
 <!--====================================================
                     Bild till höger Block
 ======================================================-->
-<section id="maskinhallar" class="business-growth-p1" *ngIf="!valPageblock.textleft">
+<section id="maskinhallar" class="business-growth-p1" [ngClass]="stylehandler(valPageblock.style_main)"  *ngIf="!valPageblock.textleft">
     <div class="container">
-        <div class="row" [ngClass]="valPageblock.rubrik ? 'padb-3 padt-6' : 'pb-0 pt-0'">
+        <div class="row" [ngClass]="valPageblock.rubrik ? 'pb-3 padt-6' : 'pb-0 pt-0'">
             <div class="col-md-6">
                 <img *ngIf="valPageblock.bild1.url" src="{{valPageblock.bild1.url}}" alt="{{valPageblock.bild1.url}}" loading="lazy" class="img-fluid ">                  
                 <img *ngIf="valPageblock.bild2.url" src="{{valPageblock.bild2.url}}" alt="{{valPageblock.bild2.url}}" loading="lazy" class="img-fluid mt-4">                     
@@ -66,75 +65,41 @@
     </div>
 </section>   
 
-
 <!--====================================================
-                        Listning med rubrik
+    List typ 1   Listning 4 Listar endast bilder
 ======================================================-->   
-
-  
-<!--====================================================
-                Listning 4 items utan bakgrundsfärg
-======================================================-->   
-<section *ngIf="valPageblock.bildblockval">    
-    <div class="container">
-        <!-- <hr>     -->
-        <div class="row mb-5 pb-5">            
-            <div class="col-md-3 col-sm-6" >
-                <div class="story-descb1">
-                    <img src="../assets/img/Bildertakstolsfabriken/DSC_5509.jpg" class="img-fluid" alt="...">                     
-                </div>          
-            </div>  
-            <div class="col-md-3 col-sm-6" >
-                <div class="story-descb1">
-                    <img src="../assets/img/Bildertakstolsfabriken/DSC_5509.jpg" class="img-fluid" alt="...">                     
-                </div>          
-            </div>   
-            <div class="col-md-3 col-sm-6" >
-                <div class="story-descb1">
-                    <img src="../assets/img/Bildertakstolsfabriken/DSC_5509.jpg" class="img-fluid" alt="...">                     
-                </div>          
-            </div>   
-            <div class="col-md-3 col-sm-6" >
-                <div class="story-descb1">
-                    <img src="../assets/img/Bildertakstolsfabriken/DSC_5509.jpg" class="img-fluid" alt="...">                     
-                </div>          
-            </div>                     
-        </div>   
-    </div> 
+<section *ngIf="valPageblock.bildblockval" [ngClass]="stylehandler(valPageblock.style_4_bilder_block)" >        
+    <app-listblock [listtyp]="1" [requestedList]="valPageblock.visa_4_bilder_fran_lista" ></app-listblock>    
 </section>
 
 <!--====================================================
-                        Listning 3 items
+    List typ 2    Listning 3 collumns items
 ======================================================-->    
-<section *ngIf="valPageblock.bildblock3val" >    
-    <div class="container">        
-        <div class="row mb-5  pb-5">            
-            <div class="col-md-4 col-sm-6" >
-                <div class="story-descb1"> 
-                <img src="../assets/img/Bildertakstolsfabriken/IMG_1262.JPG" class="img-fluid" alt="...">                       
-                </div>          
-            </div>        
-            <div class="col-md-4 col-sm-6" >
-                <div class="story-descb1">
-                    <img src="../assets/img/Bildertakstolsfabriken/IMG_1245.JPG" class="img-fluid" alt="...">                     
-                </div>          
-            </div>      
-            <div class="col-md-4 col-sm-6 "> 
-                <div class="story-descb1">
-                    <img src="../assets/img/Bildertakstolsfabriken/IMG_1281.JPG" class="img-fluid" alt="...">                                  
-                </div>
-            </div>    
-            <!-- <hr>     -->
-        </div>
-    </div> 
+<section *ngIf="valPageblock.bildblock3val" [ngClass]="stylehandler(valPageblock.style_3_bilder_block)">    
+    <app-listblock [listtyp]="2" [requestedList]="valPageblock.visa_3_bilder_fran_lista" ></app-listblock>   
+</section>
+
+<!--====================================================
+    List typ 3  Listning med rubrik och text ingen bild
+======================================================-->   
+<section *ngIf="valPageblock.textblock4val" class="business-growth-p1" [ngClass]="stylehandler(valPageblock.style_4_text_block)">
+    <app-listblock [listtyp]="3" [requestedList]="valPageblock.visa_4_text_fran_lista" ></app-listblock>   
+</section>
+
+<!--====================================================
+    List typ 4    Listning 4columners bilder med rubrik 
+            antal kan var hur många som helst
+======================================================-->       
+<section *ngIf="valPageblock.listblock" id="business-growth-p1" class="business-growth-p1 pt-3 pb-3" [ngClass]="stylehandler(valPageblock.style_list_block)" >
+    <app-listblock [listtyp]="4" [requestedList]="valPageblock.visa_listblockslista" ></app-listblock>     
 </section>
 
 <!--====================================================
                         Mer infoblock
 ======================================================-->
-<section *ngIf="valPageblock.merinfoblock" >
+<section *ngIf="valPageblock.merinfoblock" [ngClass]="stylehandler(valPageblock.style_merinfoblock)">
     <div class="container">
-        <div class="row mt-4 mb-4 pb-3" >
+        <div class="row pt-5 pb-5" >
             <div class="col-md-8">
               <div class="single-news-p1-cont" >                
                 <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
@@ -158,7 +123,7 @@
 <!--====================================================
                     Kontakta/ offert block
 ======================================================-->
-<section class="al-cta-flat" *ngIf="valPageblock.kontaktblock" >
+<section class="al-cta-flat" *ngIf="valPageblock.kontaktblock" [ngClass]="stylehandler(valPageblock.style_main)">
     <div class="container">
         <div class="row" style="padding-bottom:3rem;padding-top:3rem;">
             <div class="col-sm-12">
@@ -176,7 +141,7 @@
 <!--====================================================
                           CE Märkningsblock
 ======================================================-->
-<div class="overlay-career-p2" *ngIf="valPageblock.ce_block" ></div>
+<div class="overlay-career-p2" *ngIf="valPageblock.ce_block"></div>
 <section id="thought" class="bg-parallax career-p2-bg mb-0" *ngIf="valPageblock.ce_block" >
     <div class="container">
         <div id="row" class="row title-bar-career-p2">
@@ -190,3 +155,4 @@
         </div>
     </div>         
 </section> 
+ <div class="pt-4 pb-4" [ngClass]="stylehandler(valPageblock.style_main)" *ngIf="!valPageblock.ce_block"></div> 

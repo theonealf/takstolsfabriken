@@ -23,4 +23,10 @@ export interface IBassida{
     kontaktlank?: boolean;
     offertlank?: boolean;
     ce_block?: boolean;
+    style_main?: boolean;
+    style_4_bilder_block?:boolean;
+    style_3_bilder_block?:boolean;
+    style_4_text_block?:boolean;
+    style_list_block?:boolean;
+    style_merinfoblock?:boolean;
 }

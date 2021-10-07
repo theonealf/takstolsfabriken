@@ -1,0 +1,44 @@
+<!-- Bildblock för 4 och 3 kolumner -->
+
+<div class="story-descb1" *ngIf="typ <= 2"> 
+    <img *ngIf="!itmData.visa_lank" src="{{itmData.bild.url}}" class="img-fluid" alt="...">  
+    
+    <a *ngIf="itmData.visa_lank"  href="{{itmData.lank}}" alt="{{itmData.lanktext}}" title="{{itmData.lanktext}}">
+        <img src="{{itmData.bild.url}}" class="img-fluid" alt="..."> 
+    </a>
+                            
+</div>       
+
+
+<!-- Textblock med blå bakgrundsfärg -->
+<div class="story-descb" *ngIf="typ == 3">                        
+    
+    <div class="cardbody" *ngIf="!itmData.visa_lank" >
+        <h3 *ngIf="itmData.visa_rubrik">{{itmData.rubrik}}</h3>
+        <div class="heading-border-light"></div>
+        <div *ngIf="itmData.visa_text" [innerHtml]="itmData.text"></div>  
+    </div>
+
+    <a *ngIf="itmData.visa_lank" href="{{itmData.lank}}" alt="{{itmData.lanktext}}" title="{{itmData.lanktext}}">
+        <div class="cardbody" >        
+            <h3 *ngIf="itmData.visa_rubrik">{{itmData.rubrik}}</h3>
+            <div class="heading-border-light"></div>
+            <div *ngIf="itmData.visa_text" [innerHtml]="itmData.text"></div>          
+        </div>            
+    </a>       
+</div>          
+
+
+<!-- Takstolstyps block: bild och rubrik -->
+<div class="service-item right-bord pt-3 pb-1" *ngIf="typ == 4">
+    <span *ngIf="!itmData.visa_lank" >
+        <img  src="{{itmData.bild.url}}" class="img-fluid" alt="...">  
+        <h5 class="pt-2 pb-2" *ngIf="itmData.visa_rubrik">{{itmData.rubrik}}</h5>
+    </span>
+
+    <a *ngIf="itmData.visa_lank" style="margin-top: 0;"  href="{{itmData.lank}}" alt="{{itmData.lanktext}}" title="{{itmData.lanktext}}">
+        <img  src="{{itmData.bild.url}}" class="img-fluid" alt="...">  
+        <h5 class="pt-2 pb-2" *ngIf="itmData.visa_rubrik">{{itmData.rubrik}}</h5>
+    </a>
+    
+</div>

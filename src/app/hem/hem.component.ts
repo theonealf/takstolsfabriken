@@ -1,3 +1,5 @@
+import { Global } from './../core/Models/global';
+import { WpApiService } from './../core/Service/wp-api/wp-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HemComponent implements OnInit {
 
-  constructor() { }
+  htmlPageData:any=[];
+
+  constructor(private wpApi:WpApiService, private glb:Global) { }
 
   ngOnInit(): void {
+    this.wpApi.currentPageDataHandler.subscribe(()=>{
+      this.getMaindata();
+    })
+    this.getMaindata();
+  }
+
+  getMaindata(){
+    this.wpApi.getBasSidaCategory(23).subscribe(Response => {
+
+      this.htmlPageData = Response
+      
+      
+    });
   }
 
 }

@@ -1,4 +1,4 @@
-import { IBassida } from './../core/interface/IBassida';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Global } from './../core/Models/global';
 import { WpApiService } from './../core/Service/wp-api/wp-api.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,56 +12,40 @@ export class BassidaComponent implements OnInit {
   visapage:string="om-oss";
 
   htmlPageData:any=[];
-  // valPageblock:IBassida= {
-  //   topblockval: false,
-  //   toprubrik: "",
-  //   topunderrubrik: "",
-  //   textleft: false,
-  //   rubrik: "",
-  //   content: "",
-  //   bild1: "",
-  //   bild2: "",
-  //   bildblockval: false,
-  //   visa_4_bilder_fran_lista: 0,
-  //   bildblock3val:false,
-  //   visa_3_bilder_fran_lista: 0,
-  //   textblock4val: false,
-  //   visa_4_text_fran_lista: 0,
-  //   listblock: false,
-  //   visa_listblockslista: 0,
-  //   merinfoblock: false,
-  //   merinfo_rubrik: "",
-  //   merinfo_text: "",
-  //   merinfo_bild: false,
-  //   kontaktblock: false,
-  //   kontaktlank: false,
-  //   offertlank: false,
-  //   ce_block: false,
-  // };
 
-  constructor(private wpApi:WpApiService, private glb:Global) { }
+  currentcatID:any=0
+  SpinnerLoader = true;
 
-  ngOnInit(): void {
-    this.wpApi.currentPageDataHandler.subscribe(()=>{
-      this.getMaindata();
-    })
-    this.getMaindata();
+  constructor(private wpApi:WpApiService, private _router:Router, private glb:Global) {
+  }
+ 
+  ngOnInit(): void {  
+    
+    let tmpurl = this._router.url;
+        
+    //  kör denna tmpurl.split('#')[0] för att få bort alla # i urlen så att categoriid kan plockas fram
+     this.currentcatID= this.glb.categoryMapper(tmpurl.split('#')[0]);
+
+     this.getMaindata(this.currentcatID);
   }
 
-  getMaindata(){
-    this.wpApi.getBasSidaCategory(4).subscribe(Response => {
+  getMaindata(cid:any){
+    
+    if(this.glb.isEmptyObj(localStorage.getItem("siddata" + cid ))){
+      this.wpApi.getBasSidaCategory(this.currentcatID).subscribe(Response => {
+          
+        this.htmlPageData = Response;       
+        localStorage.setItem("siddata" +this.currentcatID, JSON.stringify(this.htmlPageData))       
+        this.SpinnerLoader = false;
+            
+      }); 
 
-      this.htmlPageData = Response
-      // this.initpageblock(this.htmlPageData[0]?.acf);
-      console.log(this.htmlPageData)
-    });
+    }else{
+      let test:any = localStorage.getItem("siddata" + cid);
+      this.htmlPageData = JSON.parse(test);      
+      this.SpinnerLoader = false;
+    }
+
   }
-
-  // initpageblock(obj:any){
-
-  //   this.valPageblock = obj;    
-
-  //   console.log("testar: " +this.valPageblock?.topblockval + " - " + this.valPageblock?.bildblockval);
-
-  // }
+ 
 }

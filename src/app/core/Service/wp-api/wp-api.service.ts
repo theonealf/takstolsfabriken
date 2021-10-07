@@ -30,14 +30,20 @@ export class WpApiService extends BaseApiService{
   }
 
   getBasSidaCategory(catid:number){
-    let url:string = this._global.server +"bassida?categories=" +catid + "&filter[orderby]=date&order=asc";
+    let url:string = this._global.server +"bassida?categories=" +catid +"&order=asc"; // + "&filter[orderby]=date";
      console.log("getBasSidaCategory URL: " + url);
     return this.getPosts(url);
   }
 
   getBasSidaByNamn(catnamn:string){
-    let url:string = this._global.server +"bassida?slug=" +catnamn + "&filter[orderby]=date&order=asc";
+    let url:string = this._global.server +"bassida?slug=" +catnamn ;
      console.log("getBasSidaCategory URL: " + url);
+    return this.getPosts(url);
+  }
+  
+  getBasSidaByID(id:number){
+    let url:string = this._global.server +"bassida/" +id ;
+     console.log("getBasSidabyid URL: " + url);
     return this.getPosts(url);
   }
 

@@ -1,3 +1,42 @@
-<div *ngFor="let itm of htmlPageData">    
-<app-main-block [requestedPage]="itm.slug" ></app-main-block>
+<!--====================================================
+                       Empty Top block
+======================================================-->
+<div id="blockid_0" class="home-p pages-head1 text-center" *ngIf="SpinnerLoader">
+    <div class="container">
+      <h1 class="" >
+        <div class="fa-3x">
+            <i class="fa fa-spinner fa-spin"></i>               
+        </div>
+    </h1>
+      <p ></p>
+    </div><!--/end container-->
+</div> 
+  <!--====================================================
+                    empty Begär offert
+  ======================================================-->
+  <section id="Takstolar" class="business-growth-p1" *ngIf="SpinnerLoader">
+    <div class="container">
+      
+      <div class="row" style="padding-bottom:3rem;padding-top:6rem;">
+        <div class="col-md-6">
+          <div class="single-news-p1-cont" >
+            
+            <div class="single-news-desc m-0 pt-1 pb-0 px-0 text-center" >
+                <div class="fa-3x">
+                    <i class="fa fa-spinner fa-spin"></i>               
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-center" >
+            <div class="fa-3x">
+                <i class="fa fa-spinner fa-spin"></i>               
+            </div>    
+        </div> 
+      </div>
+    </div>
+  </section>
+
+<div *ngFor="let itm of htmlPageData; let i = index">    
+    <app-main-block [requestedPage]="itm" ></app-main-block>
 </div>

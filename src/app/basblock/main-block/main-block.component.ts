@@ -12,6 +12,8 @@ export class MainBlockComponent implements OnInit {
 
 @Input() requestedPage?:any;
 
+blockid:any=0;
+
   htmlPageData:any=[];
   valPageblock:IBassida= {
     topblockval: false,
@@ -38,31 +40,57 @@ export class MainBlockComponent implements OnInit {
     kontaktlank: false,
     offertlank: false,
     ce_block: false,
+    style_main: false,
+    style_4_bilder_block: false,
+    style_4_text_block:false,
+    style_3_bilder_block:false,
+    style_list_block:false,
+    style_merinfoblock:false
   };
 
-  constructor(private wpApi:WpApiService, private glb:Global) { }
+  constructor() { 
+   
+  }
 
   ngOnInit(): void {
-    this.wpApi.currentPageDataHandler.subscribe(()=>{
-      this.getMaindata(this.requestedPage);
-    })
-    this.getMaindata(this.requestedPage);
+    this.blockid= this.requestedPage.id;
+    this.valPageblock = this.requestedPage.acf;
+    // this.wpApi.currentPageDataHandler.subscribe(()=>{
+    //   this.getMaindatabyID(this.requestedPage);
+    // })
+    // this.getMaindatabyID(this.requestedPage);
   }
 
-  getMaindata(pagedata:string){
-    this.wpApi.getBasSidaByNamn(pagedata).subscribe(Response => {
-
-      this.htmlPageData = Response
-      this.initpageblock(this.htmlPageData[0]?.acf);
-      console.log(this.htmlPageData)
-    });
+  stylehandler(visa:any){
+    if(visa){
+      return "bg-gray";
+    } else {
+      return "";
+    };    
   }
 
-  initpageblock(obj:any){
+  // getMaindatabyID(pagedataID:number){
+  //   this.wpApi.getBasSidaByID(pagedataID).subscribe(Response => {
 
-    this.valPageblock = obj;    
+  //     this.htmlPageData = Response
+  //     this.initpageblock(this.htmlPageData?.acf);
+  //     console.log(this.htmlPageData)
+  //   });
+  // }
+  // getMaindata(pagedata:string){
+  //   this.wpApi.getBasSidaByNamn(pagedata).subscribe(Response => {
 
-    console.log("testar: " +this.valPageblock?.topblockval + " - " + this.valPageblock?.bildblockval);
+  //     this.htmlPageData = Response
+  //     this.initpageblock(this.htmlPageData[0]?.acf);
+  //     console.log(this.htmlPageData)
+  //   });
+  // }
 
-  }
+  // initpageblock(obj:any){
+
+  //   this.valPageblock = obj;    
+
+  //   console.log("testar: " +this.valPageblock?.topblockval + " - " + this.valPageblock?.bildblockval);
+
+  // }
 }
