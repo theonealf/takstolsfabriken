@@ -1,4 +1,5 @@
-<div id="home-p" class="home-p pages-head1 text-center">
+
+<div id="home-p" class="home-p pages-head1 text-center" *ngIf="mainPageData[0].acf">
     <div class="container">
         <h1>{{mainPageData[0].acf.rubrik}}</h1>
         <p>{{mainPageData[0].acf.underrubrik}}</p>
@@ -9,7 +10,7 @@
 <!--====================================================
                       NEWS DETAILS
 ======================================================--> 
-<section id="single-news-p1" class="single-news-p1">
+<section id="single-news-p1" class="single-news-p1"  *ngIf="mainPageData[0].acf">
     <div class="container">
       <div class="row">
 

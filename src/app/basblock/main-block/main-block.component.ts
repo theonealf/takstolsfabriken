@@ -19,6 +19,7 @@ blockid:any=0;
     topblockval: false,
     toprubrik: "",
     topunderrubrik: "",
+    visa_mainblock:false,
     textleft: false,
     rubrik: "",
     content: "",
@@ -36,6 +37,8 @@ blockid:any=0;
     merinfo_rubrik: "",
     merinfo_text: "",
     merinfo_bild: false,
+    visaoffertformular:false,
+    visa_faq:false,
     kontaktblock: false,
     kontaktlank: false,
     offertlank: false,
@@ -59,6 +62,7 @@ blockid:any=0;
     //   this.getMaindatabyID(this.requestedPage);
     // })
     // this.getMaindatabyID(this.requestedPage);
+    
   }
 
   stylehandler(visa:any){

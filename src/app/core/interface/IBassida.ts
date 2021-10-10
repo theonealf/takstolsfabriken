@@ -2,6 +2,7 @@ export interface IBassida{
     topblockval?: boolean;
     toprubrik?: string;
     topunderrubrik?: string;
+    visa_mainblock?:boolean;
     textleft?: boolean;
     rubrik?:string;
     content?: string;
@@ -19,6 +20,8 @@ export interface IBassida{
     merinfo_rubrik?: string;
     merinfo_text?: string;
     merinfo_bild?: false,
+    visaoffertformular?:false;
+    visa_faq?:false;
     kontaktblock?: boolean;
     kontaktlank?: boolean;
     offertlank?: boolean;

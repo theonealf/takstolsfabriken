@@ -33,8 +33,10 @@ export class BassidaComponent implements OnInit {
     
     if(this.glb.isEmptyObj(localStorage.getItem("siddata" + cid ))){
       this.wpApi.getBasSidaCategory(this.currentcatID).subscribe(Response => {
-          
-        this.htmlPageData = Response;       
+        if((Object.keys(Response).length ===0)){
+          this._router.navigateByUrl("/404");
+        }
+        this.htmlPageData = Response;             
         localStorage.setItem("siddata" +this.currentcatID, JSON.stringify(this.htmlPageData))       
         this.SpinnerLoader = false;
             

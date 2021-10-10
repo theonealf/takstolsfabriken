@@ -34,9 +34,9 @@ export class WpApiService extends BaseApiService{
      console.log("getBasSidaCategory URL: " + url);
     return this.getPosts(url);
   }
-
-  getBasSidaByNamn(catnamn:string){
-    let url:string = this._global.server +"bassida?slug=" +catnamn ;
+ 
+  getBasSidaByNamn(sidnamn:string){
+    let url:string = this._global.server +"main_page?slug=" +sidnamn ;
      console.log("getBasSidaCategory URL: " + url);
     return this.getPosts(url);
   }
@@ -52,7 +52,6 @@ export class WpApiService extends BaseApiService{
      console.log("getPageSlug URL: " + url);
     return this.getPosts(url);
   }
-
 
   postRegisterUser(formdata:any){
     let url:string = this._global.postserver +"?post_type=RegisterUser";

@@ -11,7 +11,7 @@ import { Global } from '../core/Models/global';
 export class MainPagesComponent implements OnInit {
 
   currentSlug:any;
-  mainPageData:any = [];
+  mainPageData?:any = [];
 
   constructor(private _wpApi:WpApiService, private route:ActivatedRoute, private router:Router, gbl:Global) { }
 
@@ -26,11 +26,12 @@ export class MainPagesComponent implements OnInit {
 
   getPageData(slug:any){
     this._wpApi.getPageSlug(slug).subscribe(Response => {
-
-      this.mainPageData= Response;
-      // if((Object.keys(Response).length ===0)){
-      //   this.router.navigateByUrl("/404");
-      // };
+      if((Object.keys(Response).length ===0)){
+        this.router.navigateByUrl("/404");
+      }
+        this.mainPageData= Response;
+      
+     
 
     });
 

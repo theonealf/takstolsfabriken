@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Global } from './../core/Models/global';
 import { WpApiService } from './../core/Service/wp-api/wp-api.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HemComponent implements OnInit {
 
-  htmlPageData:any=[];
+  mainPageData?:any=[
+    {'acf':[] }
+  ];
 
-  constructor(private wpApi:WpApiService, private glb:Global) { }
+  constructor(private wpApi:WpApiService,private _router:Router, private glb:Global) { }
 
   ngOnInit(): void {
     this.wpApi.currentPageDataHandler.subscribe(()=>{
@@ -21,12 +24,15 @@ export class HemComponent implements OnInit {
   }
 
   getMaindata(){
-    this.wpApi.getBasSidaCategory(23).subscribe(Response => {
+    this.wpApi.getPageSlug("start-sida").subscribe(Response => {
 
-      this.htmlPageData = Response
+      this.mainPageData = Response
       
       
     });
   }
-
+  goto(url:string){
+    this._router.navigateByUrl(url);
+    
+  }
 }

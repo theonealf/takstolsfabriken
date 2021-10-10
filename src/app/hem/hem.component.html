@@ -1,7 +1,8 @@
 <!--====================================================
                          HOME
 ======================================================-->
-<section id="home" class=" mt-3" style="background-color: #ccc;">
+
+<section id="home" class=" mt-3" style="background-color: #ccc;" >
   <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel"> 
     <!-- Carousel items -->
     <div class="carousel-inner">
@@ -10,10 +11,10 @@
           <div class="slide-1"></div>
             <div class="hero ">
               <hgroup class="wow fadeInUp">
-                  <h1>Välkommen till Timmele takstolsfabrik AB</h1>        
-                  <h3>Vi är specialister på tillvekning av takstolar för den svenska marknaden</h3>
+                  <h1>{{mainPageData[0].acf.toprubrik}}</h1>        
+                  <h3>{{mainPageData[0].acf.topunderrubrik}}</h3>
               </hgroup>
-              <button class="btn btn-general btn-white_box wow fadeInUp" role="button">Kontakta oss!</button>
+              <button class="btn btn-general btn-white_box wow fadeInUp" (click)="goto(mainPageData[0].acf.toplink)" role="button">{{mainPageData[0].acf.topknapptext}}</button>
             </div>           
         </div> 
     </div> 
@@ -45,7 +46,7 @@
 </div>         
 </section> 
 
-<section id="tillverkning "   >
+<section id="tillverkning ">
 <div class="container">
 <div class="row title-bar">
   <div class="col-md-12 pb-2 mb-2">
@@ -55,72 +56,52 @@
 </div>
   <div class="row ">
   <div class="col-md-12 col-sm-12 d-xl-none" >
-    <div class="story-descb">
+    <div class="story-descb" (click)="goto(mainPageData[0].acf.startimgblockmainlinkurl)">
         <img src="../assets/img/takstolstillverkning2-2.jpg" class="img-fluid" alt="...">
         <div class="cardbody">
-          <h2>Takstolar</h2>
+          <h2>{{mainPageData[0].acf.startimgblockmainrublik}}</h2>
           <div class="heading-border-light"></div>
-          <p>Se vårt sortement av takstolstyper. <br> Alla våra takstolar är CE-märkta enligt EN14250. </p>
-          <a href="#"><i class="fa fa-arrow-circle-o-right"></i> Tillverkning och takstolstyper</a> 
+          <p [innerHtml]="mainPageData[0].acf.startimgblockmaintext"> </p>
+          <a routerLink="{{mainPageData[0].acf.startimgblockmainlinkurl}}"><i class="fa fa-arrow-circle-o-right"></i> {{mainPageData[0].acf.startimgblockmainlinktext}}</a> 
         </div>              
     </div>          
   </div>
   <div class="col-md-12 col-sm-12 wow fadeInUp d-none d-xl-block" data-wow-delay="0.1s">
-    <div class="story-descb-start">              
+    <div class="story-descb-start"  (click)="goto(mainPageData[0].acf.startimgblockmainlinkurl)">              
         <div class="cardbody-start">
-          <h2>Takstolar</h2>
+          <h2>{{mainPageData[0].acf.startimgblockmainrublik}}</h2>
           <div class="heading-border-light"></div>
-          <p>Se vårt sortement av takstolstyper. <br> Alla våra takstolar är CE-märkta enligt EN14250. </p>
-          <a href="#"><i class="fa fa-arrow-circle-o-right"></i> Vår tillverkning</a> 
+          <p [innerHtml]="mainPageData[0].acf.startimgblockmaintext"> </p>
+          <a routerLink="{{mainPageData[0].acf.startimgblockmainlinkurl}}"><i class="fa fa-arrow-circle-o-right"></i> {{mainPageData[0].acf.startimgblockmainlinktext}}</a> 
         </div>              
     </div>          
   </div>
-  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s"> 
+  
+  <div class="col-md-4 col-sm-6 wow fadeInUp mt-4" data-wow-delay="0.1s" *ngFor="let itm of mainPageData[0].acf.listastartimgblock let i = index"> 
     <div class="story-descb">
-        <img src="../assets/img/maskinhall4.jpg" class="img-fluid" alt="...">
+        <img src="{{itm.acf.bild.url}}" class="img-fluid" alt="...">
         <div class="cardbody">
-        <h3>Maskinhallar</h3>
+        <h3>{{itm.acf.rubrik}}</h3>
         <div class="heading-border-light"></div>
-        <p>Maskinhallen utföres av fribärande träkonstruktion bestående av fackverk och pelare. Hallen kan tillverkas i valfria mått.</p>
-        <a href=""><i class="fa fa-arrow-circle-o-right"></i> Mer om våra maskinhallar</a>
+        <p [innerHTML]="itm.acf.text"></p>
+        <a routerLink="{{itm.acf.lank}}" title="{{itm.acf.lanktext}}" *ngIf="itm.acf.visa_lank"><i class="fa fa-arrow-circle-o-right"></i> {{itm.acf.lanktext}}</a>
         </div>
     </div>
-  </div>
-  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s"> 
-    <div class="story-descb">
-        <img src="../assets/img/husstomme.jpg" class="img-fluid" alt="...">
-        <div class="cardbody">
-        <h3>Husstomme</h3>
-        <div class="heading-border-light"></div>
-        <p>Vi tillverkar färdigkapade husstommar. Stommar kan tillverkas i valfria mått enligt kunds önskemål.</p>
-        <a href=""><i class="fa fa-arrow-circle-o-right"></i> Vår tillverkning av husstommar </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s"> 
-    <div class="story-descb">
-        <img src="../assets/img/maskinhall4.jpg" class="img-fluid" alt="...">
-        <div class="cardbody">
-        <h3>Maskinhallar</h3>
-        <div class="heading-border-light"></div>
-        <p>Maskinhallen utföres av fribärande träkonstruktion bestående av fackverk och pelare. Hallen kan tillverkas i valfria mått.</p>
-        <a href=""><i class="fa fa-arrow-circle-o-right"></i> Mer om våra maskinhallar</a>
-        </div>
-    </div>
-  </div>             
+  </div> 
+          
 </div>    
 </div> 
 </section>
 
-<section class="al-cta-flat bg-gray mt-5">
+<section class="al-cta-flat bg-gray mt-5" *ngIf="mainPageData[0].acf.visa_kontaktblock">
 <div class="container">
   <div class="row" style="padding-bottom:3rem;padding-top:3rem;">
       <div class="col-sm-12">
           <div class="al-cta-box text-center">
-              <h2>Kontakta oss direkt</h2>
-              <p class="mt-3">Kontakta oss och begär offert så tillverkar vi en lösning som passar dina önskemål </p>
-              <a href="#" class="btn btn-info btn-lg py-2 px-5 mt-4 ml-1 mr-1 font-weight-bold">Kontakta oss! </a>
-              <a href="#" class="btn btn-success btn-lg py-2 px-5 mt-4  ml-1 mr-1 font-weight-bold">Begär offert! </a>
+              <h2>{{mainPageData[0].acf.kontaktblockrubrik}}</h2>
+              <p class="mt-3">{{mainPageData[0].acf.kontaktblocktext}}</p>
+              <a routerLink="/kontakt" title="Kontakta oss!" class="btn btn-info btn-lg py-2 px-5 mt-4 ml-1 mr-1 font-weight-bold">Kontakta oss! </a>
+              <a routerLink="/offert" title="Begär offert!" class="btn btn-success btn-lg py-2 px-5 mt-4  ml-1 mr-1 font-weight-bold">Begär offert! </a>
           </div>
       </div>
 
@@ -130,46 +111,29 @@
 <!--====================================================
                     Företaget
 ======================================================-->
-<section id="comp-offers" class="pt-3 " >
+<section id="comp-offers" class="pt-3 ">
 <div class="container" style="padding-bottom:6rem; margin-top:4rem;">
 <div class="row">
+  
   <div class="col-lg-3 col-sm-12 desc-comp-offer wow fadeInUp" data-wow-delay="0.1s">
     <h2>Företaget</h2>
     <div class="heading-border-light"></div> 
-    <button class="btn btn-general btn-green" role="button">Begär offert</button>
-    <button class="btn btn-general btn-white" role="button">Vanliga Frågor</button>
+    <button class="btn btn-general btn-green" (click)="goto('/offert#offert')" role="button">Begär offert</button>
+    <button class="btn btn-general btn-white" (click)="goto('/offert#offert')" role="button">Vanliga Frågor</button>
   </div>
-  <div class="col-lg-3 col-sm-4 desc-comp-offer wow fadeInUp" data-wow-delay="0.2s">
-    <div class="desc-comp-offer-cont">
-      <div class="thumbnail-blogs">                 
-          <img src="../assets/img/kontaktaoss.jpg" class="img-fluid" alt="...">
+   
+    <div class="col-lg-3 col-sm-4 desc-comp-offer wow fadeInUp" data-wow-delay="0.2s" *ngFor="let itm of mainPageData[0].acf.listastartforetagetblock let i = index">
+      <div class="desc-comp-offer-cont">
+        <div class="thumbnail-blogs">                 
+            <img src="{{itm.acf.bild.url}}" class="img-fluid" alt="...">
+        </div>
+        <h3>{{itm.acf.rubrik}}</h3>
+        <p class="desc" [innerHTML]="itm.acf.text"></p>
+        <a routerLink="{{itm.acf.lank}}" title="kontakta oss" *ngIf="itm.acf.visa_lank"><i class="fa fa-arrow-circle-o-right pb-3"></i> {{itm.acf.lanktext}}</a>
       </div>
-      <h3>Kontakta oss</h3>
-      <p class="desc">Se vårt sortement av takstolstyper. Våra takstolar är CE märkta vilket är ett krav från 1 oktober 2010</p>
-      <a href="#"><i class="fa fa-arrow-circle-o-right pb-3"></i> Kontakta oss</a>
-    </div>
-  </div>          
-  <div class="col-lg-3 col-sm-4 desc-comp-offer wow fadeInUp" data-wow-delay="0.3s">
-    <div class="desc-comp-offer-cont">
-      <div class="thumbnail-blogs">                  
-          <img src="../assets/img/frakt.jpg" class="img-fluid" alt="...">
-      </div>              
-      <h3>Frakt och montering</h3>
-      <p class="desc">Maskinhallen utföres av fribärande träkonstruktion bestående av fackverk och pelare. </p>
-          
-      <a href="#"><i class="fa fa-arrow-circle-o-right pb-3"></i> Frakt och montering</a>
-    </div>
-  </div>
-  <div class="col-lg-3 col-sm-4 desc-comp-offer wow fadeInUp" data-wow-delay="0.4s">
-    <div class="desc-comp-offer-cont">
-      <div class="thumbnail-blogs">                  
-          <img src="../assets/img/miljo2.jpg" class="img-fluid" alt="...">
-      </div>
-      <h3>Kvalitét & miljö</h3>
-      <p class="desc">Vi tillverkar färdigkapade husstommar. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <a href="#"><i class="fa fa-arrow-circle-o-right pb-3"></i> Kvalitét & miljö</a>
-    </div>
-  </div>
+    </div>          
+ 
+
 </div>
 </div>
 </section>

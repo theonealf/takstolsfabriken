@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'omoss', component: BassidaComponent},
   {path: 'main', component: MainPagesComponent},
   {path: '404', component: Err404pageComponent},
-  {path: ':slug', component: MainPagesComponent},
+  // {path: ':slug', component: MainPagesComponent},
   {path: '', component: HemComponent},
   {path: '**', component: Err404pageComponent},
 ];

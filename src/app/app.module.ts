@@ -25,6 +25,8 @@ import { TillverkningComponent } from './tillverkning/tillverkning.component';
 import { MainBlockComponent } from './basblock/main-block/main-block.component';
 import { ListblockComponent } from './basblock/listblock/listblock.component';
 import { BildblockComponent } from './basblock/listtyper/bildblock/bildblock.component';
+import { OffertFormComponent } from './offert/offert-form/offert-form.component';
+import { FaqblockComponent } from './basblock/faqblock/faqblock.component';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
@@ -92,7 +94,9 @@ const cookieConfig:NgcCookieConsentConfig = {
     TillverkningComponent,
     MainBlockComponent,
     ListblockComponent,
-    BildblockComponent
+    BildblockComponent,
+    OffertFormComponent,
+    FaqblockComponent
   ],
   imports: [
     BrowserModule,  

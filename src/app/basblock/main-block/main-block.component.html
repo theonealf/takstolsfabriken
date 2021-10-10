@@ -11,14 +11,18 @@
 <!--====================================================
                     Bild till vänster block
 ======================================================-->
-<section class="business-growth-p1" [ngClass]="stylehandler(valPageblock.style_main)" *ngIf="valPageblock.textleft">
-    <div class="container">        
+<section class="business-growth-p1" [ngClass]="stylehandler(valPageblock.style_main)" *ngIf="valPageblock.visa_mainblock">
+    
+    <!--====================================================
+                    Bild till vänster block
+    ======================================================-->
+    <div class="container" *ngIf="valPageblock.textleft">        
         <div class="row" [ngClass]="valPageblock.rubrik ? 'pb-3 padt-6' : 'pb-0 pt-0'" >
             
             <div class="col-md-6">
                 <div class="single-news-p1-cont" >
                     <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
-                        <h2 [innerHtml]="valPageblock.rubrik"></h2>
+                        <h2 id="rub_{{valPageblock.rubrik}}" [innerHtml]="valPageblock.rubrik"></h2>
                         
                         <div class="heading-border-light" *ngIf="valPageblock.rubrik" ></div>
                         
@@ -35,14 +39,11 @@
             </div> 
         </div>
     </div>
-</section>  
 
-
-<!--====================================================
+    <!--====================================================
                     Bild till höger Block
-======================================================-->
-<section id="maskinhallar" class="business-growth-p1" [ngClass]="stylehandler(valPageblock.style_main)"  *ngIf="!valPageblock.textleft">
-    <div class="container">
+    ======================================================-->
+    <div class="container" *ngIf="!valPageblock.textleft">
         <div class="row" [ngClass]="valPageblock.rubrik ? 'pb-3 padt-6' : 'pb-0 pt-0'">
             <div class="col-md-6">
                 <img *ngIf="valPageblock.bild1.url" src="{{valPageblock.bild1.url}}" alt="{{valPageblock.bild1.url}}" loading="lazy" class="img-fluid ">                  
@@ -51,7 +52,7 @@
             <div class="col-md-6">
                 <div class="single-news-p1-cont" >
                     <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
-                        <h2 [innerHtml]="valPageblock.rubrik"></h2>
+                        <h2 id="rub_{{valPageblock.rubrik}}" [innerHtml]="valPageblock.rubrik"></h2>
                         <div class="heading-border-light" *ngIf="valPageblock.rubrik"></div>                            
                         <div [innerHtml]="valPageblock.content"></div>
                         
@@ -95,9 +96,38 @@
 </section>
 
 <!--====================================================
+            Visa  Offert Formulär            
+======================================================-->       
+<section *ngIf="valPageblock.visaoffertformular"  id="offert" class="bg-gray pt-3 pb-3"   [ngClass]="stylehandler(valPageblock.style_list_block)" >
+    <app-offert-form></app-offert-form>       
+</section>
+
+<!--====================================================
+            Listning FAQ 
+            antal kan var hur många som helst
+======================================================-->       
+<section  *ngIf="valPageblock.visa_faq" >
+    <app-faqblock></app-faqblock>       
+</section>
+
+<section class="al-cta-flat bg-parallax contact-h-bg"  *ngIf="valPageblock.visa_faq">
+    <div  class="container">
+        <div class="row" style="padding-bottom:6rem;padding-top:3rem;">
+            <div class="col-sm-12">
+                <div class="al-cta-box text-center">
+                    <h2>Har du fler Frågor?</h2>
+                    <p class="mt-3" style="color:black; font-size: 1.4rem;">Är det något du undrar över så tveka inte att ta kontakt med oss</p>
+                    <a href="#" class="btn btn-info btn-lg py-2 px-5 mt-4 font-weight-bold">Kontakta oss! </a>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+  </section>
+<!--====================================================
                         Mer infoblock
 ======================================================-->
-<section *ngIf="valPageblock.merinfoblock" [ngClass]="stylehandler(valPageblock.style_merinfoblock)">
+<section *ngIf="valPageblock.merinfoblock" class="pt-3 pb-3" [ngClass]="stylehandler(valPageblock.style_merinfoblock)">
     <div class="container">
         <div class="row pt-5 pb-5" >
             <div class="col-md-8">
