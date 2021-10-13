@@ -24,12 +24,30 @@ export class HemComponent implements OnInit {
   }
 
   getMaindata(){
-    this.wpApi.getPageSlug("start-sida").subscribe(Response => {
+    if(this.glb.isEmptyObj(localStorage.getItem("startdata"))){
+      this.wpApi.getPageSlug("start-sida").subscribe(Response => {
+        if((Object.keys(Response).length ===0)){
+          this._router.navigateByUrl("/404");
+        }
+        this.mainPageData = Response;           
+        localStorage.setItem("startdata", JSON.stringify(this.mainPageData));    
+        // this.SpinnerLoader = false;
+            
+      }); 
 
-      this.mainPageData = Response
+    }else{
+      let test:any = localStorage.getItem("startdata");
+      this.mainPageData = JSON.parse(test);      
+      // this.SpinnerLoader = false;
+    }
+
+
+    // this.wpApi.getPageSlug("start-sida").subscribe(Response => {
+
+    //   this.mainPageData = Response
       
       
-    });
+    // });
   }
   goto(url:string){
     this._router.navigateByUrl(url);

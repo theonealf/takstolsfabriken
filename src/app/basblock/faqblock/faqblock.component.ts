@@ -1,4 +1,5 @@
-import * as $ from "jquery"
+import { Router } from '@angular/router';
+import { WpApiService } from './../../core/Service/wp-api/wp-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,21 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqblockComponent implements OnInit {
 
-  constructor() { }
+  faqLista?:any= [];
+  faqCatId:number=19;
+  ToggleRunOnceHandler= true;
+
+  constructor(private wpApi:WpApiService,private _router:Router) { }
 
   ngOnInit(): void {
-
-    if( jQuery(".toggle .toggle-title").hasClass('active') ){
-      jQuery(".toggle .toggle-title.active").closest('.toggle').find('.toggle-inner').show();
-    }
-    jQuery(".toggle .toggle-title").on("click", (function(){
-        if( jQuery(this).hasClass('active') ){
-            jQuery(this).removeClass("active").closest('.toggle').find('.toggle-inner').slideUp(200);
-        }
-        else{   jQuery(this).addClass("active").closest('.toggle').find('.toggle-inner').slideDown(200);
-        }
-    }));
-
+    this.wpApi.currentPageDataHandler.subscribe(()=>{
+      this.getMaindata();
+     
+    })
+    this.getMaindata();   
   }
 
-}
+    getMaindata(){
+      this.wpApi.getListaByCategory(this.faqCatId).subscribe(Response => {
+        this.faqLista = Response;  
+       
+      });
+    }
+    goto(url:string){
+      this._router.navigateByUrl(url);    
+    }
+   
+    faqtoggle(val:any){     
+      return (val== 'true')? 'false':'true';      
+    }
+  }
+  

@@ -1,6 +1,6 @@
 <!-- Bildblock för 4 och 3 kolumner -->
 
-<div class="story-descb1" *ngIf="typ <= 2"> 
+<div class="story-descb1 mb-2" *ngIf="typ <= 2"> 
     <img *ngIf="!itmData.visa_lank" src="{{itmData.bild.url}}" class="img-fluid" alt="...">  
     
     <a *ngIf="itmData.visa_lank"  href="{{itmData.lank}}" alt="{{itmData.lanktext}}" title="{{itmData.lanktext}}">
@@ -11,7 +11,7 @@
 
 
 <!-- Textblock med blå bakgrundsfärg -->
-<div class="story-descb" *ngIf="typ == 3">                        
+<div class="story-descb mb-2" *ngIf="typ == 3">                        
     
     <div class="cardbody" *ngIf="!itmData.visa_lank" >
         <h3 *ngIf="itmData.visa_rubrik">{{itmData.rubrik}}</h3>
@@ -30,7 +30,7 @@
 
 
 <!-- Takstolstyps block: bild och rubrik -->
-<div class="service-item right-bord pt-3 pb-1" *ngIf="typ == 4">
+<div class="service-item right-bord pt-3 pb-1 mb-2" *ngIf="typ == 4">
     <span *ngIf="!itmData.visa_lank" >
         <img  src="{{itmData.bild.url}}" class="img-fluid" alt="...">  
         <h5 class="pt-2 pb-2" *ngIf="itmData.visa_rubrik">{{itmData.rubrik}}</h5>

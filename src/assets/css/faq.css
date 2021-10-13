@@ -28,7 +28,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
       }
       .toggle .toggle-inner {
         padding: 7px 25px 10px 25px;
-        display: none;
+        /* display: none; */
         margin: -7px 0 6px;
       }
       .toggle .toggle-inner div {
@@ -44,7 +44,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
       }
       .toggle .toggle-title i {
         position: absolute;
-        background: url("http://arielbeninca.com/Storage/plus_minus.png") 0px -24px no-repeat;
+        /* background: url("http://arielbeninca.com/Storage/plus_minus.png") 0px -24px no-repeat; */
         width: 24px;
         height: 24px;
         -webkit-transition: all 0.3s ease;
@@ -55,9 +55,9 @@ License URL: https://creativecommons.org/licenses/by/4.0/
         margin: 20px;
         right: 0;
       }
-      .toggle .toggle-title.active i {
+      /* .toggle .toggle-title.active i {
         background: url("http://arielbeninca.com/Storage/plus_minus.png") 0px 0px no-repeat;
-      }
+      } */
 
       @media (max-width: 575px){
         .toggle .toggle-title i { 

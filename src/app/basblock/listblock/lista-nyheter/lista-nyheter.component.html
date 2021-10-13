@@ -1,0 +1,7 @@
+<ul >
+    <li *ngFor="let itm of nyhetslista ">
+        <a routerLink="itm.acf.url" title="{{itm.acf.link_name}}" *ngIf="itm.acf.visa_lank">{{itm.acf.aktuelltText}}</a>
+        <span *ngIf="!itm.acf.visa_lank">{{itm.acf.aktuelltText}}</span>
+    
+    </li>    
+</ul>

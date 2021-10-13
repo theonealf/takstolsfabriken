@@ -44,7 +44,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto" >
               <li class="nav-item" *ngFor="let itm of mainNavData">
-                <a class="nav-link smooth-scroll" routerLink="{{itm.acf.link}}" routerLinkActive="active" >{{itm.acf.linkname}}</a>
+                <a class="nav-link smooth-scroll" routerLink="{{itm.acf.link}}" title="{{itm.acf.linkname}}" routerLinkActive="active" >{{itm.acf.linkname}}</a>
               </li>              
           </ul>  
         </div>

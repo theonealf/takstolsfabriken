@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { IBassida } from './../../core/interface/IBassida';
 import { Global } from './../../core/Models/global';
 import { WpApiService } from './../../core/Service/wp-api/wp-api.service';
@@ -36,7 +37,7 @@ blockid:any=0;
     merinfoblock: false,
     merinfo_rubrik: "",
     merinfo_text: "",
-    merinfo_bild: false,
+    merinfo_bild: [],
     visaoffertformular:false,
     visa_faq:false,
     kontaktblock: false,
@@ -51,7 +52,7 @@ blockid:any=0;
     style_merinfoblock:false
   };
 
-  constructor() { 
+  constructor(private _router:Router) { 
    
   }
 
@@ -72,7 +73,10 @@ blockid:any=0;
       return "";
     };    
   }
-
+  goto(url:string){
+    this._router.navigateByUrl(url);
+    
+  }
   // getMaindatabyID(pagedataID:number){
   //   this.wpApi.getBasSidaByID(pagedataID).subscribe(Response => {
 

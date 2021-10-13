@@ -2,7 +2,7 @@
                          HOME
 ======================================================-->
 
-<section id="home" class=" mt-3" style="background-color: #ccc;" >
+<section id="home" class=" mt-0" style="background-color: #ccc;" >
   <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel"> 
     <!-- Carousel items -->
     <div class="carousel-inner">
@@ -14,7 +14,7 @@
                   <h1>{{mainPageData[0].acf.toprubrik}}</h1>        
                   <h3>{{mainPageData[0].acf.topunderrubrik}}</h3>
               </hgroup>
-              <button class="btn btn-general btn-white_box wow fadeInUp" (click)="goto(mainPageData[0].acf.toplink)" role="button">{{mainPageData[0].acf.topknapptext}}</button>
+              <button class="btn btn-general btn-white_box wow fadeInUp" title="{{mainPageData[0].acf.topknapptext}}" (click)="goto(mainPageData[0].acf.toplink)" role="button">{{mainPageData[0].acf.topknapptext}}</button>
             </div>           
         </div> 
     </div> 
@@ -33,14 +33,11 @@
   </div>
   <div class="col-md-7 ">
     
-    <ul >
-      <li>Just nu har vi långa leveranstider. Beräknad leveranstid på nya objekt är v.48</li>
-      <li>På grund av det skiftande råvarupriset på trä är våra offerttider förkortade</li>
-    </ul>
+    <app-lista-nyheter></app-lista-nyheter>
     
   </div> 
   <div class="col-md-3 text-center">
-    <button class="btn btn-general btn-green" role="button">Vill du veta mer?</button> 
+    <button routerLink="/kontakt" title="Vill du veta mer?" class="btn btn-general btn-green" role="button">Vill du veta mer?</button> 
   </div>
 </div>
 </div>         
@@ -50,7 +47,7 @@
 <div class="container">
 <div class="row title-bar">
   <div class="col-md-12 pb-2 mb-2">
-    <h1 class="wow fadeInUp ">Vår tillverkning</h1>      
+    <h2 class="wow fadeInUp ">Vår tillverkning</h2>      
     <div class="heading-border"></div>  
   </div>
 </div>
@@ -62,19 +59,19 @@
           <h2>{{mainPageData[0].acf.startimgblockmainrublik}}</h2>
           <div class="heading-border-light"></div>
           <p [innerHtml]="mainPageData[0].acf.startimgblockmaintext"> </p>
-          <a routerLink="{{mainPageData[0].acf.startimgblockmainlinkurl}}"><i class="fa fa-arrow-circle-o-right"></i> {{mainPageData[0].acf.startimgblockmainlinktext}}</a> 
+          <a routerLink="{{mainPageData[0].acf.startimgblockmainlinkurl}}" title="{{mainPageData[0].acf.startimgblockmainlinktext}}"><i class="fa fa-arrow-circle-o-right"></i> {{mainPageData[0].acf.startimgblockmainlinktext}}</a> 
         </div>              
     </div>          
   </div>
   <div class="col-md-12 col-sm-12 wow fadeInUp d-none d-xl-block" data-wow-delay="0.1s">
-    <div class="story-descb-start"  (click)="goto(mainPageData[0].acf.startimgblockmainlinkurl)">              
+    <a class="story-descb-start" (click)="goto(mainPageData[0].acf.startimgblockmainlinkurl)" title="{{mainPageData[0].acf.startimgblockmainlinktext}}">              
         <div class="cardbody-start">
           <h2>{{mainPageData[0].acf.startimgblockmainrublik}}</h2>
           <div class="heading-border-light"></div>
           <p [innerHtml]="mainPageData[0].acf.startimgblockmaintext"> </p>
-          <a routerLink="{{mainPageData[0].acf.startimgblockmainlinkurl}}"><i class="fa fa-arrow-circle-o-right"></i> {{mainPageData[0].acf.startimgblockmainlinktext}}</a> 
+          <a routerLink="{{mainPageData[0].acf.startimgblockmainlinkurl}}" title="{{mainPageData[0].acf.startimgblockmainlinktext}}"><i class="fa fa-arrow-circle-o-right"></i> {{mainPageData[0].acf.startimgblockmainlinktext}}</a> 
         </div>              
-    </div>          
+    </a>          
   </div>
   
   <div class="col-md-4 col-sm-6 wow fadeInUp mt-4" data-wow-delay="0.1s" *ngFor="let itm of mainPageData[0].acf.listastartimgblock let i = index"> 
@@ -118,12 +115,12 @@
   <div class="col-lg-3 col-sm-12 desc-comp-offer wow fadeInUp" data-wow-delay="0.1s">
     <h2>Företaget</h2>
     <div class="heading-border-light"></div> 
-    <button class="btn btn-general btn-green" (click)="goto('/offert#offert')" role="button">Begär offert</button>
-    <button class="btn btn-general btn-white" (click)="goto('/offert#offert')" role="button">Vanliga Frågor</button>
+    <button title="Begär offert" class="btn btn-general btn-green" (click)="goto('/offert#offert')" role="button">Begär offert</button>
+    <button title="Vanliga frågor" class="btn btn-general btn-white" (click)="goto('/offert#offert')" role="button">Vanliga frågor</button>
   </div>
    
     <div class="col-lg-3 col-sm-4 desc-comp-offer wow fadeInUp" data-wow-delay="0.2s" *ngFor="let itm of mainPageData[0].acf.listastartforetagetblock let i = index">
-      <div class="desc-comp-offer-cont">
+      <div class="desc-comp-offer-cont" (click)="goto(itm.acf.lank)">
         <div class="thumbnail-blogs">                 
             <img src="{{itm.acf.bild.url}}" class="img-fluid" alt="...">
         </div>

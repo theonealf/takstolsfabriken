@@ -19,7 +19,7 @@ export interface IBassida{
     merinfoblock?: boolean;
     merinfo_rubrik?: string;
     merinfo_text?: string;
-    merinfo_bild?: false,
+    merinfo_bild?: any,
     visaoffertformular?:false;
     visa_faq?:false;
     kontaktblock?: boolean;

@@ -27,10 +27,11 @@ import { ListblockComponent } from './basblock/listblock/listblock.component';
 import { BildblockComponent } from './basblock/listtyper/bildblock/bildblock.component';
 import { OffertFormComponent } from './offert/offert-form/offert-form.component';
 import { FaqblockComponent } from './basblock/faqblock/faqblock.component';
+import { ListaNyheterComponent } from './basblock/listblock/lista-nyheter/lista-nyheter.component';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
-    domain: 'localhost'// 'timmele.se' //it is recommended to set your domain, for cookies to work properly
+    domain: 'katalog.frontdata.se' //'localhost'// 'timmele.se' //it is recommended to set your domain, for cookies to work properly
   },
   palette: {
     popup: {
@@ -96,7 +97,8 @@ const cookieConfig:NgcCookieConsentConfig = {
     ListblockComponent,
     BildblockComponent,
     OffertFormComponent,
-    FaqblockComponent
+    FaqblockComponent,
+    ListaNyheterComponent
   ],
   imports: [
     BrowserModule,  

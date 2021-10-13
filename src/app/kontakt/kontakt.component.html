@@ -4,12 +4,9 @@
 ======================================================-->
 <div id="home-p" class="home-p pages-head1 text-center">
     <div class="container">
-      <h1 class="wow fadeInUp" data-wow-delay="0.1s">Kontakta oss</h1>
-      <h2 style="color: #fff;"><i class="fa fa-phone"></i> 0321-53 02 80 </h2>
-       <p> Växel öppen:<br>
-        Mån-tordag kl 07:30- 16:00 <br>
-        fredag kl 07:30- 15:00 <br>
-        </p>
+      <h1 class="wow fadeInUp" data-wow-delay="0.1s">{{mainPageData[0].acf.toprubrik}}</h1>
+      <h2 style="color: #fff;"><i class="fa fa-phone"></i> {{mainPageData[0].acf.toptelnr}} </h2>
+       <p [innerHTML]="mainPageData[0].acf.toptext"></p>
     </div><!--/end container-->
   </div> 
 
@@ -33,8 +30,8 @@
     </div>  
     <div class="row">  
     <div class="col-12 ">
-        <div class="single-news-img text-center">
-        <img src="../../assets/img/personal/inne/Produktionpersonal.jpg" alt="Personalen" class="img-fluid">
+        <div class="single-news-img text-center">        
+          <img src="{{mainPageData[0].acf.personalbild?.url}}" class="img-fluid" alt="{{mainPageData[0].acf.personalbild?.alt}}" />
         </div>
     </div>
     </div>
@@ -49,28 +46,18 @@
     <div class="row">
       <div class="col-md-8">
         <div class="contact-p1-cont">
-          <h3>TVEKA INTE, KONTAKTA OSS!</h3>
+          <h3>{{mainPageData[0].acf.kontaktrubrik}}</h3>
           <div class="heading-border-light"></div> 
-          <p>
-            Växel öppen:<br>
-            Mån-tordag kl 07:30- 16:00 <br>
-            fredag kl 07:30- 15:00 <br>
-            Övrig tid omkoppling till Johnys Abrahamssons mobil</p>
+          <div [innerHTML]="mainPageData[0].acf.kontakttext">
+           </div>
         </div>
       </div>
       <div class="col-md-4"> 
         <div class="contact-p1-cont2"> 
-          <h4>Address</h4>
+          <h4>{{mainPageData[0].acf.adressrubrik}}</h4>
           <div class="heading-border-light"></div> 
-          <address class="address-details-f">
-            Timmele Takstolsfabrik<br> 
-            Gunnarsgårdsvägen 12,<br>
-            523 72 Timmele  <br>
-            Växel 0321-53 02 80<br>
-            Fax 0321-53 02 89<br>
-            Email: <a href="mailto:info@timmele.com" class="">info@timmele.com</a>
-          </address>
-         
+          <address class="address-details-f" [innerHTML]="mainPageData[0].acf.adresstext">            
+          </address>         
         </div>
       </div>  
     </div>

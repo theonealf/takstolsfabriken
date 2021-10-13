@@ -10,139 +10,29 @@
           <div class="faq-p1-cont">
             <div class="service-h-tab"> 
               <nav class="nav nav-tabs" id="myTab" role="tablist">
-                <!-- <a class="nav-item nav-link " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">De 10 stegen</a> -->
-                <!-- <a class="nav-item nav-link " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Vanliga frågor</a>                    -->
-              </nav>
+                <!-- <a class="nav-item nav-link " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">De 10 stegen</a>
+                <a class="nav-item nav-link " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Vanliga frågor</a>                    -->
+              </nav>              
               <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">      
-                  <div class="toggle">
-                    <div class="toggle-title ">
+                <div class="tab-pane fade  show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">      
+                  <div class="toggle" *ngFor="let itm of faqLista; let i = index" data-expand="false" #expandWrap>
+                    <div class="toggle-title" (click)="expandWrap.dataset.expand = faqtoggle(expandWrap.dataset.expand)">                      
                       <h3>
                       <i></i>
-                      <span class="title-name">1. Ritningar och takstolstyper</span>
+                      <span class="title-name">{{i +1}}. {{itm.acf.rubrik}}</span>
                       </h3>
                     </div>
-                    <div class="toggle-inner">
-                      <p>
-                        Skicka över samtliga handlingar som finns på byggnaden till oss via post, mail eller fax. Saknar Ni handlingar går det bra att skriva ut lämplig typ av takstol från Takstolstyper      <br>  Glöm inte namn, adress, mailadres, telefonnummer samt fastighetsbeteckning.</p>
+                    <div class="toggle-inner" *ngIf="expandWrap.dataset.expand == 'true'">
+                      <img *ngIf="itm.acf.visa_bild" src="{{itm.acf.bild.url}}" class="img-fluid" alt="{{itm.acf.bild.alt}}" />
+                      <p [innerHTML]="itm.acf.text"></p>
+                      <a *ngIf="itm.acf.visa_lank" href="{{itm.acf.lank}}" alt="{{itm.acf.lanktext}}" title="{{itm.acf.lanktext}}">
+                        {{itm.acf.lanktext}}
+                      </a>
                     </div>
                   </div> 
-                  <div class="toggle">
-                    <div class="toggle-title  ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">2. Presentation av förslag</span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                        <p>När vi är överens om hur taket skall se ut och vilken funktion det skall ha presenterar vi färdiga ritningar tillsammans med ett pris.
-                        </p>
-                    </div>
-                  </div> 
-                  <div class="toggle">
-                    <div class="toggle-title  ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">3. Genomgång av taklösning</span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                        <p>Om det finns oklarheter går vi tillsammans igenom taklösningen med Er.
-                        </p>
-                    </div>
-                  </div> 
-                  <div class="toggle">
-                    <div class="toggle-title  ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">4. Bygghandling och avtal</span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                        <p>Vid beställning gör vi en sista genomgång och efter det skickar vi över ritningar märkta "Bygghandling" samt avtal för underskrift.
-                        </p>
-                    </div>
-                  </div> 
-                  <div class="toggle">
-                    <div class="toggle-title  ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">5. Leveransöverenskommelse</span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                        <p>Vid beställning kommer vi även överens om en leveransvecka. I vissa regioner levererar vi med kranbil som även kan lyfta takstolarna på plats.
-                        <br> Detta ingår inte i fraktkostnaden, utan debiteras extra och kräver viss planering.
-                        </p>
-                    </div>
-                  </div> 
-                  <div class="toggle">
-                    <div class="toggle-title  ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">6. Detta är steg sex </span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                      <p>Vid beställning kommer vi även överens om en leveransvecka. I vissa regioner levererar vi med kranbil som även kan lyfta takstolarna på plats.
-                        <br> Detta ingår inte i fraktkostnaden, utan debiteras extra och kräver viss planering.
-                        </p>
-                    </div>
-                  </div> 
-                  <div class="toggle">
-                    <div class="toggle-title  ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">7. Detta är steg sju</span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                      <p>Vid beställning kommer vi även överens om en leveransvecka. I vissa regioner levererar vi med kranbil som även kan lyfta takstolarna på plats.
-                        <br> Detta ingår inte i fraktkostnaden, utan debiteras extra och kräver viss planering.
-                        </p>
-                    </div>
-                  </div> 
-                  <div class="toggle">
-                    <div class="toggle-title  ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">8. Detta är steg åtta</span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                      <p>Vid beställning kommer vi även överens om en leveransvecka. I vissa regioner levererar vi med kranbil som även kan lyfta takstolarna på plats.
-                        <br> Detta ingår inte i fraktkostnaden, utan debiteras extra och kräver viss planering.
-                        </p>
-                    </div>
-                  </div> 
-                  <div class="toggle">
-                    <div class="toggle-title  ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">9. Detta är steg nio</span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                      <p>Vid beställning kommer vi även överens om en leveransvecka. I vissa regioner levererar vi med kranbil som även kan lyfta takstolarna på plats.
-                        <br> Detta ingår inte i fraktkostnaden, utan debiteras extra och kräver viss planering.
-                        </p>
-                    </div>
-                  </div> 
-                  <div class="toggle">
-                    <div class="toggle-title ">
-                        <h3>
-                        <i></i>
-                        <span class="title-name">10. Detta är steg tio</span>
-                        </h3>
-                    </div>
-                    <div class="toggle-inner">
-                      <p>Vid beställning kommer vi även överens om en leveransvecka. I vissa regioner levererar vi med kranbil som även kan lyfta takstolarna på plats.
-                        <br> Detta ingår inte i fraktkostnaden, utan debiteras extra och kräver viss planering.
-                        </p>
-                    </div>
-                  </div> 
+                  
                 </div>
-                <div class="tab-pane fade  show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                   <div class="toggle">
                     <div class="toggle-title ">
                       <h3>

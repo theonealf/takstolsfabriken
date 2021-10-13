@@ -37,19 +37,32 @@ export class WpApiService extends BaseApiService{
  
   getBasSidaByNamn(sidnamn:string){
     let url:string = this._global.server +"main_page?slug=" +sidnamn ;
-     console.log("getBasSidaCategory URL: " + url);
+    
     return this.getPosts(url);
   }
   
   getBasSidaByID(id:number){
-    let url:string = this._global.server +"bassida/" +id ;
-     console.log("getBasSidabyid URL: " + url);
+    let url:string = this._global.server +"bassida/" +id ;    
     return this.getPosts(url);
   }
 
   getPageSlug(slug:any){
-    let url:string = this._global.server +"main_page?slug="+slug;
-     console.log("getPageSlug URL: " + url);
+    let url:string = this._global.server +"main_page?slug="+slug;     
+    return this.getPosts(url);
+  }
+  getKontaktPageSlug(slug:any){
+    let url:string = this._global.server +"kontaktsida?slug="+slug;     
+    return this.getPosts(url);
+  }
+
+  getListaByCategory(catid:number){
+    let url:string = this._global.server +"listblock?categories=" +catid +"&order=asc"; // + "&filter[orderby]=date";
+     console.log("getListaByCategory URL: " + url);
+    return this.getPosts(url);
+  }
+
+  getAktuelltList(){
+    let url:string = this._global.server +"aktuellt";    
     return this.getPosts(url);
   }
 

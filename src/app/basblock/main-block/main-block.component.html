@@ -34,8 +34,8 @@
                 </div>
             </div>
             <div class="col-md-6">                  
-                <img *ngIf="valPageblock.bild1.url" src="{{valPageblock.bild1.url}}" alt="{{valPageblock.bild1.url}}" loading="lazy" class="img-fluid">                  
-                <img *ngIf="valPageblock.bild2.url" src="{{valPageblock.bild2.url}}" alt="{{valPageblock.bild2.url}}" loading="lazy" class="img-fluid mt-4">        
+                <img *ngIf="valPageblock.bild1.url" src="{{valPageblock.bild1.url}}" alt="{{valPageblock.bild1.alt}}" title="{{valPageblock.bild1.alt}}" loading="lazy" class="img-fluid">                  
+                <img *ngIf="valPageblock.bild2.url" src="{{valPageblock.bild2.url}}" alt="{{valPageblock.bild2.alt}}" title="{{valPageblock.bild1.alt}}" loading="lazy" class="img-fluid mt-4">        
             </div> 
         </div>
     </div>
@@ -46,8 +46,8 @@
     <div class="container" *ngIf="!valPageblock.textleft">
         <div class="row" [ngClass]="valPageblock.rubrik ? 'pb-3 padt-6' : 'pb-0 pt-0'">
             <div class="col-md-6">
-                <img *ngIf="valPageblock.bild1.url" src="{{valPageblock.bild1.url}}" alt="{{valPageblock.bild1.url}}" loading="lazy" class="img-fluid ">                  
-                <img *ngIf="valPageblock.bild2.url" src="{{valPageblock.bild2.url}}" alt="{{valPageblock.bild2.url}}" loading="lazy" class="img-fluid mt-4">                     
+                <img *ngIf="valPageblock.bild1.url" src="{{valPageblock.bild1.url}}" alt="{{valPageblock.bild1.alt}}" title="{{valPageblock.bild1.alt}}" loading="lazy" class="img-fluid ">                  
+                <img *ngIf="valPageblock.bild2.url" src="{{valPageblock.bild2.url}}" alt="{{valPageblock.bild2.alt}}" title="{{valPageblock.bild1.alt}}" loading="lazy" class="img-fluid mt-4">                     
             </div> 
             <div class="col-md-6">
                 <div class="single-news-p1-cont" >
@@ -98,7 +98,7 @@
 <!--====================================================
             Visa  Offert Formulär            
 ======================================================-->       
-<section *ngIf="valPageblock.visaoffertformular"  id="offert" class="bg-gray pt-3 pb-3"   [ngClass]="stylehandler(valPageblock.style_list_block)" >
+<section *ngIf="valPageblock.visaoffertformular" id="offert" class="bg-gray pt-3 pb-3" [ngClass]="stylehandler(valPageblock.style_list_block)" >
     <app-offert-form></app-offert-form>       
 </section>
 
@@ -133,18 +133,14 @@
             <div class="col-md-8">
               <div class="single-news-p1-cont" >                
                 <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
-                  <h4>Forum för information och rådgivning.</h4>
+                  <h4>{{valPageblock.merinfo_rubrik}}</h4>
                   <div class="heading-border-light"></div>
-                  <p>En samrådsgrupp är inrättad och består av representanter för tillverkare av takstolar och spikplåtar, beräkningsbyråer, berörda myndigheter samt SP. Gruppen har till uppgift att
-                    - ta till vara den kunskap som finns inom området
-                    - verka för en effektiv erfarenhetsåterföring
-                    - samt bidra till en samordnad information om trätakstolar
-                    </p>                 
+                  <p [innerHTML]="valPageblock.merinfo_text"> </p>                 
                 </div>
               </div>
             </div>
             <div class="col-md-4">
-                <img src="../assets/img/kagerodl1.jpg" class="img-fluid" alt="...">      
+                <img src="{{valPageblock.merinfo_bild.url}}" alt="{{valPageblock.merinfo_bild.alt}}" title="{{valPageblock.merinfo_bild.alt}}" class="img-fluid" alt="...">      
             </div> 
         </div>
     </div>  
