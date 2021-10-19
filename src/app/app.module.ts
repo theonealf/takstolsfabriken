@@ -105,7 +105,7 @@ const cookieConfig:NgcCookieConsentConfig = {
     NgcCookieConsentModule.forRoot(cookieConfig),
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

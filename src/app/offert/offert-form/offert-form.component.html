@@ -19,33 +19,47 @@
           <div class="col-12 col-md-8">         
               <label></label>
               <input type="text" name="full-name" placeholder="Namn" class="form-control">
+              <span class="ml-1 text-danger">* Du måste fyllas i kontaktnamn</span>
+              
               <label></label>
               <input type="text" name="full-name" placeholder="Företag" class="form-control">
+                            
               <label></label>
-              <input type="text" name="email" placeholder="E-post" class="form-control">          
+              <input type="text" name="email" placeholder="E-post" class="form-control "> 
+              <span class="ml-1 text-danger">* Du måste fyllas i E-postadress</span>
+              
+              <label></label>         
+              <select id="val-typ" name="typ" class="form-control" style="color:#717171;">
+                <option value="">Välj område</option>
+                <option value="1">Takstolar</option>
+                <option value="2">Stommar</option>
+                <option value="3">Maskinhall</option>  
+                <option value="4">Annat</option>               
+            </select>        
+            <span class="ml-1 text-danger">* Du måste välja område</span>   
           </div>
-          <div class="col-md-12">          
-            <textarea name="" id="" placeholder="Underlag för offertförfrågan" class="form-control"></textarea>
+          <div class="col-md-12">                      
+            <textarea name="" id="" placeholder="Underlag för offertförfrågan" class="form-control"></textarea>            
           </div>
   
           <div class="col-12 col-md-8">   
             <div class="panel panel-default ">
               <div class="input-group image-preview">
-                <input placeholder="" type="text" class="form-control image-preview-filename" disabled="disabled">
+                <input placeholder="" type="text" class="form-control image-preview-filename" [value]="filnamn" (drop)="onDropFile($event)" (dragover)="onDragOverFile($event)">
                 <span class="input-group-btn"> 
-                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> 
-                    <span class="glyphicon glyphicon-remove"></span> Clear 
-                  </button>
-                  <div class="btn btn-default image-preview-input"> 
-                    <span class="glyphicon glyphicon-folder-open"></span> 
-                    <span class="image-preview-input-title">Ladda upp underlag</span>
-                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview" />
+                  
+                  <button class="btn btn-default image-preview-input" *ngIf="clearfile" >                     
+                    <span class="image-preview-input-title" (click)="onRemove($event)">Ta bort</span>                    
+                  </button> 
+                  <div class="btn btn-default image-preview-input" *ngIf="!clearfile">                     
+                    <span class="image-preview-input-title" >Ladda upp underlag</span>
+                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"  (change)="onChange($event)"/>
                   </div> 
                 </span>
               </div>
             </div>
           </div>
-  
+
           <div class="col-md-12 sub-but">          
             <button class="btn btn-general btn-white mt-4" role="button">Skicka in </button>
           </div>

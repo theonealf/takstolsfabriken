@@ -476,6 +476,8 @@ p {
 
         .container {
             max-width: 100%;
+            /* andreas fix  overflow: hidden;*/
+            overflow: hidden; 
         }
 
         .navbar>.container .navbar-brand,
@@ -497,9 +499,9 @@ p {
             border-bottom: 1px solid #ddd;
         }
 
-        .navbar-nav>li:last-child {
+        /* .navbar-nav>li:last-child {
             padding: 0px;
-        }
+        } */
         .navbar-nav>li.dropdown .dropdown-menu {
             margin-bottom: 15px;
         }

@@ -97,8 +97,8 @@
           <div class="al-cta-box text-center">
               <h2>{{mainPageData[0].acf.kontaktblockrubrik}}</h2>
               <p class="mt-3">{{mainPageData[0].acf.kontaktblocktext}}</p>
-              <a routerLink="/kontakt" title="Kontakta oss!" class="btn btn-info btn-lg py-2 px-5 mt-4 ml-1 mr-1 font-weight-bold">Kontakta oss! </a>
-              <a routerLink="/offert" title="Begär offert!" class="btn btn-success btn-lg py-2 px-5 mt-4  ml-1 mr-1 font-weight-bold">Begär offert! </a>
+              <a routerLink="/kontakt" title="Kontakta oss!" class="btn btn-info btn-lg py-2 px-5 mt-4 ml-1 mr-1 font-weight-bold" *ngIf="mainPageData[0].acf.visakontaktaossknapp">Kontakta oss! </a>
+              <a routerLink="/offert" title="Begär offert!" class="btn btn-success btn-lg py-2 px-5 mt-4  ml-1 mr-1 font-weight-bold" *ngIf="mainPageData[0].acf.visaoffertknapp">Begär offert! </a>
           </div>
       </div>
 
@@ -115,8 +115,8 @@
   <div class="col-lg-3 col-sm-12 desc-comp-offer wow fadeInUp" data-wow-delay="0.1s">
     <h2>Företaget</h2>
     <div class="heading-border-light"></div> 
-    <button title="Begär offert" class="btn btn-general btn-green" (click)="goto('/offert#offert')" role="button">Begär offert</button>
-    <button title="Vanliga frågor" class="btn btn-general btn-white" (click)="goto('/offert#offert')" role="button">Vanliga frågor</button>
+    <button title="Begär offert" class="btn btn-general btn-green" (click)="goto('/offert#offert')"  role="button">Begär offert</button>
+    <button title="Vanliga frågor" class="btn btn-general btn-white" (click)="goto('/offert#offert')"  role="button">Vanliga frågor</button>
   </div>
    
     <div class="col-lg-3 col-sm-4 desc-comp-offer wow fadeInUp" data-wow-delay="0.2s" *ngFor="let itm of mainPageData[0].acf.listastartforetagetblock let i = index">
