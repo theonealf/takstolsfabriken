@@ -14,38 +14,47 @@
       </div>
     </div>
     <div class="container" >
-        <div class="row  pb-5 con-form">
+        <form [formGroup]="OffertForm" class="row  pb-5 con-form">
           
           <div class="col-12 col-md-8">         
               <label></label>
-              <input type="text" name="full-name" placeholder="Namn" class="form-control">
-              <span class="ml-1 text-danger">* Du måste fyllas i kontaktnamn</span>
+              <input type="text" formControlName="offertName" name="offertName" placeholder="Namn" class="form-control" 
+              [class.is-invalid]="OffertForm.get('offertName')?.invalid && OffertForm.get('offertName')?.touched">
+              <div *ngIf="OffertForm.get('offertName')?.invalid && OffertForm.get('offertName')?.touched" class="ml-1 text-danger">* Du måste fylla i ett kontaktnamn</div>
               
               <label></label>
-              <input type="text" name="full-name" placeholder="Företag" class="form-control">
+              <input type="text" formControlName="offertForetag" name="offertForetag" placeholder="Företag" class="form-control">
                             
               <label></label>
-              <input type="text" name="email" placeholder="E-post" class="form-control "> 
-              <span class="ml-1 text-danger">* Du måste fyllas i E-postadress</span>
+              <input type="text" formControlName="offertEmail" name="offertEmail" placeholder="E-post" class="form-control"
+              [class.is-invalid]="OffertForm.get('offertEmail')?.invalid && OffertForm.get('offertEmail')?.touched"> 
+              <div *ngIf="OffertForm.get('offertEmail')?.invalid && OffertForm.get('offertEmail')?.touched"  class="ml-1 text-danger">
+                <span *ngIf="OffertForm.get('offertEmail')?.invalid">* Du måste ange en giltig E-postadress</span>
+              </div>
               
               <label></label>         
-              <select id="val-typ" name="typ" class="form-control" style="color:#717171;">
+              <select id="val-typ" formControlName="offertTyp" name="offertTyp" class="form-control" style="color:#717171;"
+              [class.is-invalid]="OffertForm.get('offertTyp')?.invalid && OffertForm.get('offertTyp')?.touched">
                 <option value="">Välj område</option>
                 <option value="1">Takstolar</option>
                 <option value="2">Stommar</option>
                 <option value="3">Maskinhall</option>  
                 <option value="4">Annat</option>               
             </select>        
-            <span class="ml-1 text-danger">* Du måste välja område</span>   
+            <span *ngIf="OffertForm.get('offertTyp')?.invalid && OffertForm.get('offertTyp')?.touched" class="ml-1 text-danger">* Du måste välja område</span>   
           </div>
           <div class="col-md-12">                      
-            <textarea name="" id="" placeholder="Underlag för offertförfrågan" class="form-control"></textarea>            
+            <textarea formControlName="offertUnderlag" name="offertUnderlag" id="offertUnderlag" placeholder="Underlag för offertförfrågan" class="form-control mb-0"
+            [class.is-invalid]="OffertForm.get('offertUnderlag')?.invalid && OffertForm.get('offertUnderlag')?.touched"></textarea>    
+            <div *ngIf="OffertForm.get('offertUnderlag')?.invalid && OffertForm.get('offertUnderlag')?.touched"  class="ml-1 text-danger">
+              <span *ngIf="OffertForm.get('offertUnderlag')?.invalid">* Du måste fylla i underlag för offertförfrågan</span>
+            </div>        
           </div>
   
           <div class="col-12 col-md-8">   
-            <div class="panel panel-default ">
+            <div class="panel panel-default  mt-4">
               <div class="input-group image-preview">
-                <input placeholder="" type="text" class="form-control image-preview-filename" [value]="filnamn" (drop)="onDropFile($event)" (dragover)="onDragOverFile($event)">
+                <input placeholder="" type="text" formControlName="offertFile" name="offertFile" class="form-control image-preview-filename" [value]="filnamn" (drop)="onDropFile($event)" (dragover)="onDragOverFile($event)">
                 <span class="input-group-btn"> 
                   
                   <button class="btn btn-default image-preview-input" *ngIf="clearfile" >                     
@@ -53,7 +62,7 @@
                   </button> 
                   <div class="btn btn-default image-preview-input" *ngIf="!clearfile">                     
                     <span class="image-preview-input-title" >Ladda upp underlag</span>
-                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"  (change)="onChange($event)"/>
+                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview" formControlName="offertUpload" name="offertUpload" (change)="onChange($event)"/>
                   </div> 
                 </span>
               </div>
@@ -64,6 +73,8 @@
             <button class="btn btn-general btn-white mt-4" role="button">Skicka in </button>
           </div>
   
-        </div>
+        </form>
+
+        {{OffertForm.value | json}}
     </div>
   <!-- </section> -->

@@ -1,5 +1,5 @@
 import { UploadfileServiceService } from './../../core/Service/upload/uploadfile-service.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 
@@ -10,18 +10,31 @@ import { HttpEventType, HttpResponse } from '@angular/common/http';
 })
 export class OffertFormComponent implements OnInit {
 
-  constructor(private upload: UploadfileServiceService) { }
+  constructor(private upload: UploadfileServiceService, private fb: FormBuilder) { }
   
-  formGroup?: FormGroup;
+  OffertForm= this.fb.group({
+    offertName: ['', Validators.required],
+    offertForetag: ["Företag"],
+    offertEmail: ['', [Validators.required, Validators.email]],
+    offertTyp: ['', Validators.required],
+    offertUnderlag: ['', Validators.required],
+    offertFile: [],
+    offertUpload:[]    
+  });
+
+
   filnamn?:string="";
   tmpupload?:any;
   clearfile:boolean= false;
+
+
   ngOnInit() {
   }
   onChange(event:any) {
     this.filnamn ="";
     if(event.target.files[0]){
-      this.filnamn = event.target.files[0].name;
+      this.filnamn = event.target.files[0].name;  
+      this.OffertForm.get('offertFile')?.setValue(event.target.files[0].name);   
       this.clearfile= true;
     }    
   }
@@ -34,6 +47,7 @@ export class OffertFormComponent implements OnInit {
   onDropFile($event:any) {
     $event.preventDefault();
     this.uploadFile($event.dataTransfer.files);
+    this.OffertForm.get('offertFile')?.setValue($event.dataTransfer.files[0].name);   
   }
 
   // At the drag drop area
@@ -57,7 +71,11 @@ export class OffertFormComponent implements OnInit {
     }
     let file: File = files[0];
     this.filnamn =files[0].name;
+    this.OffertForm.get('offertFile')?.setValue(files);   
 console.log(files[0].name);
+
+
+
     // this.upload.uploadFile("/api/flash/upload", file)
     //   .subscribe(
     //     event => {
@@ -74,4 +92,5 @@ console.log(files[0].name);
     //     }
     //   )
   }
+
 }
