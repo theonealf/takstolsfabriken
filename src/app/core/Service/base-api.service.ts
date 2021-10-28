@@ -10,6 +10,9 @@ export class BaseApiService {
   private _httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
   }
+  private _httpOptions2 = {
+    headers: new HttpHeaders({'Content-Type': 'multipart/form-data'})
+  }
 
   constructor(@Inject(String) private url:string, private http:HttpClient) {
   }
@@ -26,7 +29,14 @@ export class BaseApiService {
   }
 
   doPost(url:string, postobj:any){
-    return this.http.post(url,JSON.stringify(postobj),this._httpOptions)
+    return this.http.post(url,postobj,this._httpOptions)
+    .pipe(
+      catchError(this.HandleThisClassErrors)
+    );
+  }
+
+  doPostFile(url:string, postobj:FormData){
+    return this.http.post(url, postobj)
     .pipe(
       catchError(this.HandleThisClassErrors)
     );

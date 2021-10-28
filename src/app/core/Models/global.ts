@@ -8,7 +8,7 @@ export class Global {
   private _devserver:string = "https://katalog.frontdata.se/wpAdmin";
   private _localdevserver:string = "http://localhost:81/takstolsfabrikenWP";
   private _wpApi:string = "/wp-json/wp/v2/";
-  private _wpApiPost:string = "/wp-json/addreg/v2/";
+  private _wpApiPost:string = "/wp-json/";
 
   userregistered:string = ""
   VisaMainNav:boolean=true;

@@ -66,11 +66,25 @@ export class WpApiService extends BaseApiService{
     return this.getPosts(url);
   }
 
-  postRegisterUser(formdata:any){
-    let url:string = this._global.postserver +"?post_type=RegisterUser";
-     console.log("getPageSlug URL: " + url);
+  postOffertForm(formdata:any){
+    let url:string = this._global.postserver +"offert/send";
+     console.log("postOffertForm URL: " + url);
+     console.log(formdata);
+    return this.doPostFile(url,formdata);
+  }
+  
+  postKontaktForm(formdata:any){
+    let url:string = this._global.postserver +"kontakta/send";
+     console.log("postKontaktForm URL: " + url);
      console.log(formdata);
     return this.doPost(url,formdata);
+  }
+
+  postFileForm(formdata:FormData){
+    let url:string = this._global.postserver +"ladda/send";
+     console.log("postKontaktForm URL: " + url);
+     console.log(formdata);
+    return this.doPostFile(url,formdata);
   }
 
 

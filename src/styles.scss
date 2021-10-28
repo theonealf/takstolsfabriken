@@ -53,16 +53,22 @@ html{
 }
 
 .btn-green {        
-    background-color: #2196f3;
-    color: #fff;
+    background-color: #fff;
+    color: #238f3c;
     cursor: pointer;
+    border-color: #238f3c;
 }
 
 .btn-green:hover,
 .btn-green:focus {
-    border-color: #2196f3;
-    color: #2196f3;
-    background-color: #fff;
+    border-color: #238f3c;
+    color: #f9f9fa;
+    background-color: #28a745;
+}
+
+.greenboxBorder{
+    border:1px solid green; 
+    padding:1rem;
 }
  
 .btn-back-to-top {

@@ -69,12 +69,19 @@
             </div>
           </div>
 
-          <div class="col-md-12 sub-but">          
-            <button class="btn btn-general btn-white mt-4" role="button">Skicka in </button>
+          <div class="col-md-12 sub-but" >          
+            <button class="btn btn-general btn-white mt-4" (click)="submitForm()" role="button">Skicka in </button>
+            <div class="ml-1 mt-4 text-success greenboxBorder" *ngIf="inskickatForm" >                     
+              <h4 class="text-success">Tack för din offertförfrågan!</h4>              
+              <h5 class="text-success">Vi återkommer inom kort!</h5>
+              <button class="btn btn-green" (click)="fadeout()">Ok</button>
+            </div> 
           </div>
   
         </form>
 
         {{OffertForm.value | json}}
+        {{FDObj | json}}
+        
     </div>
   <!-- </section> -->
