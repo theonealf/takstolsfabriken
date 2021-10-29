@@ -35,13 +35,13 @@
               <label></label>         
               <select id="val-typ" formControlName="offertTyp" name="offertTyp" class="form-control" style="color:#717171;"
               [class.is-invalid]="OffertForm.get('offertTyp')?.invalid && OffertForm.get('offertTyp')?.touched">
-                <option value="">Välj område</option>
+                <option value="">Välj offerttyp</option>
                 <option value="1">Takstolar</option>
                 <option value="2">Stommar</option>
                 <option value="3">Maskinhall</option>  
                 <option value="4">Annat</option>               
             </select>        
-            <span *ngIf="OffertForm.get('offertTyp')?.invalid && OffertForm.get('offertTyp')?.touched" class="ml-1 text-danger">* Du måste välja område</span>   
+            <span *ngIf="OffertForm.get('offertTyp')?.invalid && OffertForm.get('offertTyp')?.touched" class="ml-1 text-danger">* Du måste välja offerttyp </span>   
           </div>
           <div class="col-md-12">                      
             <textarea formControlName="offertUnderlag" name="offertUnderlag" id="offertUnderlag" placeholder="Underlag för offertförfrågan" class="form-control mb-0"
