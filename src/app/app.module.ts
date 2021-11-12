@@ -31,7 +31,7 @@ import { ListaNyheterComponent } from './basblock/listblock/lista-nyheter/lista-
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
-    domain: 'katalog.frontdata.se' //'localhost'// 'timmele.se' //it is recommended to set your domain, for cookies to work properly
+    domain: 'dev.timmele.se' //'katalog.frontdata.se' //'localhost'// it is recommended to set your domain, for cookies to work properly
   },
   palette: {
     popup: {

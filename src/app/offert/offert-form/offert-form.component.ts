@@ -70,16 +70,16 @@ export class OffertFormComponent implements OnInit {
 
   uploadFile(files: FileList) {
     if (files.length == 0) {
-      console.log("No file selected!");
+      // console.log("No file selected!");
       return;
     };
-    console.log("ladda fil");
+    // console.log("ladda fil");
     let file: File = files[0];
     this.filnamn =files[0].name;
     this.OffertForm.get('offertFile')?.setValue(files[0]);
     // this.OffertForm.patchValue({'offertFile' : files[0]});   
     // this.OffertForm.get('offertFile')?.updateValueAndValidity();
-    console.log(files[0].name +" | json");
+    // console.log(files[0].name +" | json");
 
     // this.upload.uploadFile("/api/flash/upload", file)
     //   .subscribe(
@@ -139,7 +139,8 @@ export class OffertFormComponent implements OnInit {
         if((Object.keys(Response).length ===0)){
           console.log("ERROR postOffertForm");
         }else{
-          this.inskickatForm = true;      
+          this.inskickatForm = true;    
+          this.clearfile= false;  
           this.OffertForm.reset();
         }     
             
