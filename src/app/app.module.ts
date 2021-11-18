@@ -112,7 +112,7 @@ const cookieConfig:NgcCookieConsentConfig = {
     NO_ERRORS_SCHEMA
   ],
   providers: [
-    Global
+    Global,
   ],
   bootstrap: [AppComponent]
 })

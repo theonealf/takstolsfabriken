@@ -28,8 +28,8 @@ export class BaseApiService {
     );
   }
 
-  doPost(url:string, postobj:any){
-    return this.http.post(url,postobj,this._httpOptions)
+  doPost(url:string, postobj:FormData){
+    return this.http.post(url,postobj)
     .pipe(
       catchError(this.HandleThisClassErrors)
     );

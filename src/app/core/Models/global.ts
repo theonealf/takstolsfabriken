@@ -14,10 +14,10 @@ export class Global {
   userregistered:string = ""
   VisaMainNav:boolean=true;
   VisaGuideNav:boolean=false;
-  currentversion:string="Version: 1.0.1 2021-11-10"
+  currentversion:string="Version: 1.0.0 2021-11-12"
 
-  server:string = this._localdevserver + this._wpApi;
-  postserver:string = this._localdevserver + this._wpApiPost;
+  server:string = this._devLoopia + this._wpApi;
+  postserver:string = this._devLoopia + this._wpApiPost;
   devkey:string = "/devkey/alf/?type=json";
 
   constructor(private router: Router) {

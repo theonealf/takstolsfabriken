@@ -1864,7 +1864,7 @@ p {
 
     address.address-details-f,
     address.address-details-f a {
-        color: #ddd;
+        color: #98a1a7;
         font-size: 1rem;
     }
 
@@ -1909,7 +1909,7 @@ p {
     @media (min-width: 1600px) {
         address.address-details-f,
         address.address-details-f a {
-            color: #ddd;
+            color: #98a1a7;
             font-size: 17px;
         }
 

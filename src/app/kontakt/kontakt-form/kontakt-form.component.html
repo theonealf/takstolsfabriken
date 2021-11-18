@@ -5,19 +5,25 @@
         <div class="col-12">
           <label></label>
           <input type="text" name="full-name" placeholder="Namn" class="form-control" formControlName="Namn">
-          <span *ngIf="Namn && !Namn.valid && (Namn.dirty || Namn.touched)">Du måste fylla i namn </span>
+          <span *ngIf="Namn && !Namn.valid && (Namn.dirty || Namn.touched)" class="ml-1 text-danger">Du måste fylla i namn </span>
           <label></label>
           <input type="text" name="email" placeholder="E-post" class="form-control" formControlName="Epost"> 
-          <span *ngIf="Epost && !Epost.valid && (Epost.dirty || Epost.touched) && !Epost.hasError('email')">Du måste fylla i E-postadress </span>     
-          <span *ngIf="Epost && !Epost.valid && Epost.hasError('email')">Du måste fylla i korrekt E-postadress </span>    
+          <span *ngIf="Epost && !Epost.valid && (Epost.dirty || Epost.touched) && !Epost.hasError('email')" class="ml-1 text-danger">Du måste fylla i E-postadress </span>     
+          <span *ngIf="Epost && !Epost.valid && Epost.hasError('email')" class="ml-1 text-danger" class="ml-1 text-danger">Du måste fylla i korrekt E-postadress </span>    
         </div>
         <div class="col-md-12">
-          <textarea name="Medelande" id="Medelande" formControlName="Medelande"></textarea>
-          <span *ngIf="Medelande && !Medelande.valid && (Medelande.dirty || Medelande.touched)">Du måste fylla i E-postadress </span>   
+          <textarea name="Meddelande" id="Meddelande" formControlName="Meddelande" class="form-control mb-0"></textarea>
+          <span *ngIf="Meddelande && !Meddelande.valid && (Meddelande.dirty || Meddelande.touched)" class="ml-1 text-danger">Du måste fylla i meddelandefältet </span>   
         </div>          
-        <div class="col-md-12 sub-but"><button class="btn btn-general btn-dark" role="button" (click)="skicka()" [disabled]="!kontaktForm.valid" title="Skicka" >Skicka</button></div>
-
-      </div>     
+        <div class="col-md-12 sub-but mt-4"><button class="btn btn-general btn-green" role="button" (click)="submitForm()" [disabled]="!kontaktForm.valid" title="Skicka" >Skicka</button></div>
+        <div class="ml-1 mt-4 text-success greenboxBorder" *ngIf="inskickatForm" >                     
+          <h4 class="text-success">Tack för ditt meddelande!</h4>              
+          <h5 class="text-success">Vi återkommer inom kort!</h5>
+          <button class="btn btn-green" (click)="fadeout()">Ok</button>
+        </div> 
+      </div>           
       
     </div>
 </div>
+<!-- {{kontaktForm.value | json}}
+        {{FDObj | json}} -->
