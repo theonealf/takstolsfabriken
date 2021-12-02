@@ -2,6 +2,7 @@ import { Global } from 'src/app/core/Models/global';
 import { Router } from '@angular/router';
 import { WpApiService } from './../core/Service/wp-api/wp-api.service';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-kontakt',
@@ -14,13 +15,16 @@ export class KontaktComponent implements OnInit {
     {'acf':[] }
   ];
 
-  constructor(private wpApi:WpApiService,private _router:Router, private glb:Global) { }
+  constructor(private wpApi:WpApiService,private _router:Router, private glb:Global, private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(this.glb.HeadTitleMapper("Kontakta oss"));
+    
     this.wpApi.currentPageDataHandler.subscribe(()=>{
       this.getMaindata();
     })
     this.getMaindata();
+    
   }
 
   getMaindata(){

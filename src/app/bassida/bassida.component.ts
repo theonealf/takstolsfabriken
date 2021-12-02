@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Global } from './../core/Models/global';
 import { WpApiService } from './../core/Service/wp-api/wp-api.service';
@@ -16,13 +17,13 @@ export class BassidaComponent implements OnInit {
   currentcatID:any=0
   SpinnerLoader = true;
 
-  constructor(private wpApi:WpApiService, private _router:Router, private glb:Global) {
+  constructor(private wpApi:WpApiService, private _router:Router, private glb:Global, private titleService: Title ) {
   }
  
   ngOnInit(): void {  
     
     let tmpurl = this._router.url;
-        
+    this.titleService.setTitle(this.glb.HeadTitleMapper(tmpurl));
     //  kör denna tmpurl.split('#')[0] för att få bort alla # i urlen så att categoriid kan plockas fram
      this.currentcatID= this.glb.categoryMapper(tmpurl.split('#')[0]);
 

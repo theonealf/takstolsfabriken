@@ -1,5 +1,4 @@
 
-import { Router } from '@angular/router';
 import {Injectable } from "@angular/core";
 
 @Injectable() // Decorator that marks a class as available to be provided and injected as a dependency.
@@ -20,7 +19,7 @@ export class Global {
   postserver:string = this._devLoopia + this._wpApiPost;
   devkey:string = "/devkey/alf/?type=json";
 
-  constructor(private router: Router) {
+  constructor() {
   }
 
   public isEmptyObj = (obj:any) => {
@@ -58,5 +57,13 @@ export class Global {
       {catid:6, catname:"/tillverkning"},
       {catid:5, catname:"/bas"},     
     ]
+  }
+
+  public HeadTitleMapper(url:string){
+    return this.capitalize(url.replace('/', '')) + " - Timmele takstolsfabrik";    
+  }
+
+  private capitalize(str:string)  {
+    return str && str[0].toUpperCase() + str.slice(1);
   }
 }

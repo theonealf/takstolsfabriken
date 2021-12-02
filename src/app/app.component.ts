@@ -26,13 +26,15 @@ export class AppComponent implements OnInit, OnDestroy {
        console.log("storage is cleared");
    });
 
-   _router.events.subscribe(event => {
-    if(event instanceof NavigationEnd){
+    _router.events.subscribe(event => {
+      if(event instanceof NavigationEnd){
 
-      console.log(event.urlAfterRedirects);
-      gtag('config', 'G-679KYR1EX0', {'page_path': event.urlAfterRedirects});
-    }
-  })
+        console.log(event.urlAfterRedirects);
+        gtag('config', 'G-679KYR1EX0', {'page_path': event.urlAfterRedirects});
+        gtag('set', 'page', event.urlAfterRedirects);
+        gtag('send', 'pageview');
+      }
+    })
 
 
   //  _router.events.pipe(filter(e => e instanceof NavigationEnd))
@@ -60,5 +62,6 @@ export class AppComponent implements OnInit, OnDestroy {
     //or document.body.scrollTop = 0;
     //or document.querySelector('body').scrollTo(0,0)
     
-}
+  }
+  
 }

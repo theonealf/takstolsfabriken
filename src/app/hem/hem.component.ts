@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Global } from './../core/Models/global';
 import { WpApiService } from './../core/Service/wp-api/wp-api.service';
@@ -14,9 +15,10 @@ export class HemComponent implements OnInit {
     {'acf':[] }
   ];
 
-  constructor(private wpApi:WpApiService,private _router:Router, private glb:Global) { }
+  constructor(private wpApi:WpApiService,private _router:Router, private glb:Global, private titleService: Title ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(this.glb.HeadTitleMapper("Hem"));
     this.wpApi.currentPageDataHandler.subscribe(()=>{
       this.getMaindata();
     })
