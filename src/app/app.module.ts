@@ -101,7 +101,7 @@ const cookieConfig:NgcCookieConsentConfig = {
     ListaNyheterComponent
   ],
   imports: [
-    BrowserModule,  
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),  
     NgcCookieConsentModule.forRoot(cookieConfig),
     AppRoutingModule,
     HttpClientModule,

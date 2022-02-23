@@ -2,7 +2,7 @@ import { Global } from './../../core/Models/global';
 import { WpApiService } from './../../core/Service/wp-api/wp-api.service';
 import { FormGroup, FormControl, Validators, NgForm, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-
+import * as FormData from 'form-data'; 
 @Component({
   selector: 'app-offert-form',
   templateUrl: './offert-form.component.html',
@@ -14,16 +14,16 @@ export class OffertFormComponent implements OnInit {
 
   constructor(private wpApi:WpApiService, private glb:Global,  private fb: FormBuilder) { 
   
-  this.OffertForm= this.fb.group({
-    offertName: ['', Validators.required],
-    offertForetag: ["Företag"],
-    offertEmail: ['', [Validators.required, Validators.email]],
-    offertTyp: ['', Validators.required],
-    offertUnderlag: ['', Validators.required],
-    offertFile: [],
-    offertUpload:[]    
-  });
-}
+    this.OffertForm= this.fb.group({
+      offertName: ['', Validators.required],
+      offertForetag: ["Företag"],
+      offertEmail: ['', [Validators.required, Validators.email]],
+      offertTyp: ['', Validators.required],
+      offertUnderlag: ['', Validators.required],
+      offertFile: [],
+      offertUpload:[]    
+    });
+  }
   FDObj:any  = new FormData();
 
   filnamn?:string="";

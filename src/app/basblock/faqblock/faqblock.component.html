@@ -15,21 +15,7 @@
               </nav>              
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade  show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">      
-                  <div class="toggle" *ngFor="let itm of faqLista; let i = index" data-expand="false" #expandWrap>
-                    <div class="toggle-title" (click)="expandWrap.dataset.expand = faqtoggle(expandWrap.dataset.expand)">                      
-                      <h3>
-                      <i></i>
-                      <span class="title-name">{{i +1}}. {{itm.acf.rubrik}}</span>
-                      </h3>
-                    </div>
-                    <div class="toggle-inner" *ngIf="expandWrap.dataset.expand == 'true'">
-                      <img *ngIf="itm.acf.visa_bild" src="{{itm.acf.bild.url}}" class="img-fluid" alt="{{itm.acf.bild.alt}}" />
-                      <p [innerHTML]="itm.acf.text"></p>
-                      <a *ngIf="itm.acf.visa_lank" href="{{itm.acf.lank}}" alt="{{itm.acf.lanktext}}" title="{{itm.acf.lanktext}}">
-                        {{itm.acf.lanktext}}
-                      </a>
-                    </div>
-                  </div> 
+                  
                   
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">

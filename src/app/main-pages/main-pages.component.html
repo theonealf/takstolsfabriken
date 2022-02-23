@@ -1,8 +1,8 @@
 
-<div id="home-p" class="home-p pages-head1 text-center" *ngIf="mainPageData[0].acf">
+<div id="home-p" class="home-p pages-head1 text-center" *ngIf="mainPageData[0]?.acf!">
     <div class="container">
-        <h1>{{mainPageData[0].acf.rubrik}}</h1>
-        <p>{{mainPageData[0].acf.underrubrik}}</p>
+        <h1>{{mainPageData[0]?.acf!.rubrik}}</h1>
+        <p>{{mainPageData[0]?.acf!.underrubrik}}</p>
     </div>
     <!--/end container-->
 </div>
@@ -10,7 +10,7 @@
 <!--====================================================
                       NEWS DETAILS
 ======================================================--> 
-<section id="single-news-p1" class="single-news-p1"  *ngIf="mainPageData[0].acf">
+<section id="single-news-p1" class="single-news-p1"  *ngIf="mainPageData[0]?.acf!">
     <div class="container">
       <div class="row">
 
@@ -18,7 +18,7 @@
         <div class="col-md-8">
           <div class="single-news-p1-cont">
            
-            <div class="single-news-desc" [innerHTML]="mainPageData[0].acf.maincontent">                    
+            <div class="single-news-desc" [innerHTML]="mainPageData[0]?.acf!.maincontent">                    
             </div>
           </div>  
           <hr>
@@ -26,7 +26,7 @@
 
         <!-- Right news details -->
         <div class="col-md-4">
-          <div class="small-news-box artikelbild" [innerHTML]="mainPageData[0].acf.rightcontent">            
+          <div class="small-news-box artikelbild" [innerHTML]="mainPageData[0]?.acf!.rightcontent">            
           </div>
          
         </div> 
