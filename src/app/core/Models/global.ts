@@ -54,6 +54,7 @@ export class Global {
     return [
       {catid:5, catname:"/offert"},
       {catid:4, catname:"/omoss"},
+      {catid:28, catname:"/frakt"},
       {catid:6, catname:"/tillverkning"},
       {catid:5, catname:"/bas"},     
     ]

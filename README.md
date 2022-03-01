@@ -28,6 +28,15 @@ https://www.thecodehubs.com/how-to-deploy-ssr-angular-universal-to-iis/
 DOCKER
 ng build --prod && ng run pdts:server
 
+#kör dockercontainern så att du kan använda sidan i browsern: sätt porten i host först sedan den som är exposed i contaninern
+docker run --rm -it -p 4201:4200 timmeleuniversal
+
+docker run --rm -it -p timmeleuniversal
+#listar alla containers som körs
+docker ps
+
+#stoppar containern: stop +id från ps
+docker stop fee9fc3e2280
 
 devprojekt\wwwroot_wamp\Timmeletakstolsfabrik>
 # Timmeletakstolsfabrik

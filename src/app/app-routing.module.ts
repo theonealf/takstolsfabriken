@@ -24,6 +24,7 @@ const routes: Routes = [
   {path: 'kontakt', component: KontaktComponent},
   {path: 'tillverkning', component: BassidaComponent},
   {path: 'offert', component: BassidaComponent},
+  {path: 'frakt', component: BassidaComponent},
   {path: 'omoss', component: BassidaComponent},
   {path: 'main', component: MainPagesComponent},
   {path: '404', component: Err404pageComponent},

@@ -9,12 +9,12 @@
         <div class="carousel-item active slides">
           <div class="overlay"></div>
           <div class="slide-1"></div>
-            <div class="hero ">
+            <div *ngIf="mainPageData[0].acf.toprubrik" class="hero ">
               <hgroup class="wow fadeInUp">
                   <h1>{{mainPageData[0].acf.toprubrik}}</h1>        
                   <h3>{{mainPageData[0].acf.topunderrubrik}}</h3>
               </hgroup>
-              <button class="btn btn-general btn-white_box wow fadeInUp" title="{{mainPageData[0].acf.topknapptext}}" (click)="goto(mainPageData[0].acf.toplink)" role="button">{{mainPageData[0].acf.topknapptext}}</button>
+              <button *ngIf="mainPageData[0].acf.topknapptext" class="btn btn-general btn-white_box wow fadeInUp" title="{{mainPageData[0].acf.topknapptext}}" (click)="goto(mainPageData[0].acf.toplink)" role="button">{{mainPageData[0].acf.topknapptext}}</button>
             </div>           
         </div> 
     </div> 
@@ -108,7 +108,7 @@
 <!--====================================================
                     Företaget
 ======================================================-->
-<section id="comp-offers" class="pt-3 ">
+<section id="comp-offers" *ngIf="mainPageData[0].acf.visastartforetagetblock" class="pt-3">
 <div class="container" style="padding-bottom:6rem; margin-top:4rem;">
 <div class="row">
   
