@@ -1,4 +1,4 @@
-import { Title } from '@angular/platform-browser';
+import {Meta , Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Global } from './../core/Models/global';
 import { WpApiService } from './../core/Service/wp-api/wp-api.service';
@@ -15,9 +15,10 @@ export class HemComponent implements OnInit {
     {'acf':[] }
   ];
 
-  constructor(private wpApi:WpApiService,private _router:Router, private glb:Global, private titleService: Title ) { }
+  constructor(private wpApi:WpApiService,private _router:Router, private glb:Global, private titleService: Title, private meta: Meta ) { }
 
   ngOnInit(): void {
+    this.meta.updateTag({ name: 'description', content: 'Updated: Title and Meta tags examples' });
     this.titleService.setTitle(this.glb.HeadTitleMapper("Hem"));
     this.wpApi.currentPageDataHandler.subscribe(()=>{
       this.getMaindata();

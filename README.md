@@ -31,7 +31,7 @@ ng build --prod && ng run pdts:server
 #kör dockercontainern så att du kan använda sidan i browsern: sätt porten i host först sedan den som är exposed i contaninern
 docker run --rm -it -p 4201:4200 timmeleuniversal
 
-docker run --rm -it -p timmeleuniversal
+docker run --rm -it -p timmeleuniversal ng run Timmeletakstolsfabrik:serve-ssr
 #listar alla containers som körs
 docker ps
 
