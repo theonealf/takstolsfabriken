@@ -41,7 +41,7 @@
 <!--====================================================
                         CONTACT-P1  
 ======================================================--> 
-<section id="contact-p1" class="contact-p1" style="background-color: rgb(240, 240, 240,.5); margin-left:0px; margin-right: 0px;" >
+<section id="contact-p1" class="contact-p1" *ngIf="mainPageData[0].acf.visakontaktform" style="background-color: rgb(240, 240, 240,.5); margin-left:0px; margin-right: 0px;" >
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -70,7 +70,7 @@
 <!--====================================================
                      MAP
 ======================================================--> 
-  <section id="contact-add">
+  <section id="contact-add" *ngIf="mainPageData[0].acf.visakarta">
     <div id="map">
       <div class="map-responsive">
          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3569.813716955433!2d13.418313405195113!3d57.858624988194386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465a901a665bfb79%3A0xff8af3fd0e587fe!2sTimmele%20Takstolsfabrik!5e0!3m2!1ssv!2sse!4v1623188120686!5m2!1ssv!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

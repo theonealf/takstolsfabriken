@@ -14,10 +14,10 @@ export class FooterComponent implements OnInit {
   constructor(private wpApi:WpApiService, public glb:Global, private viewportScroller: ViewportScroller) { }
 
   ngOnInit(): void {
-    this.wpApi.currentPageDataHandler.subscribe(()=>{
-      this.getNavdata();
-    })
-    this.getNavdata();
+    // this.wpApi.currentPageDataHandler.subscribe(()=>{
+    //   this.getNavdata();
+    // })
+    // this.getNavdata();
   }
 
   getNavdata(){
