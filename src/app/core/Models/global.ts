@@ -5,6 +5,7 @@ import {Injectable } from "@angular/core";
 export class Global {
   private _liveserver:string = "https://katalog.frontdata.se"; // Timmele.se
   private _devLoopia:string = "https://dev.timmele.se/wpAdmin";
+  private _angLoopia:string = "https://ang.timmele.se/wpAdmin";
   private _devserver:string = "https://katalog.frontdata.se/wpAdmin";
   private _localdevserver:string = "http://localhost:81/takstolsfabrikenWP";
   private _wpApi:string = "/wp-json/wp/v2/";
@@ -15,8 +16,8 @@ export class Global {
   VisaGuideNav:boolean=false;
   currentversion:string="Version: 1.0.0 2021-11-12"
 
-  server:string = this._devLoopia + this._wpApi;
-  postserver:string = this._devLoopia + this._wpApiPost;
+  server:string = this._angLoopia + this._wpApi;
+  postserver:string = this._angLoopia + this._wpApiPost;
   devkey:string = "/devkey/alf/?type=json";
 
   constructor() {

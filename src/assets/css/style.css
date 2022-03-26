@@ -251,7 +251,7 @@ p {
 
     .navbar-nav>li>a {
         color: #000 !important; 
-        font-size: 14.5px;
+        font-size: 13.5px;
         font-weight: 400;
         font-family: "Raleway", sans-serif;
         text-transform: uppercase;
@@ -259,6 +259,11 @@ p {
         margin: 0 10px;
     }
 
+    @media (min-width: 1200px) { 
+        .navbar-nav>li>a {            
+            font-size: 14.5px;
+        }
+     }
     .navbar-nav>li>a:hover,
     .navbar-nav>li>a:active {
         color: #2196f3!important;
@@ -581,7 +586,7 @@ p {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(../img/fabriken_logo_ny5.jpg);
+    background-image: url(../img/fabriken_logo_ny5-2.jpg);
     min-height: 450px;
 }
 
@@ -2004,7 +2009,7 @@ p {
     margin-top: 0px;
     margin-bottom: 0px;
     padding:0px;
-    background-image: url(../img/takstolstillverkning4.jpg);
+    background-image: url(/assets/img/takstolstillverkning5.jpg);
     min-height: 400px;
     display: flex;
     justify-content:flex-end;
