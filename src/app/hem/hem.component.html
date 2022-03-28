@@ -75,6 +75,7 @@
   </div> -->
   
 <div class="col-md-6" *ngFor="let itm of mainPageData[0].acf.listastarttopimgblock let i = index">
+  <a routerLink="{{itm.acf.lank}}" title="{{itm.acf.lanktext}}">
   <div class="story-descb">
         <img src="{{itm.acf.bild.url}}" class="img-fluid" alt="...">
         <div class="cardbody">
@@ -84,10 +85,12 @@
         <a routerLink="{{itm.acf.lank}}" title="{{itm.acf.lanktext}}" *ngIf="itm.acf.visa_lank"><i class="fa fa-arrow-circle-o-right"></i> {{itm.acf.lanktext}}</a>
         </div>
     </div>
+  </a>
 </div>
 
 
-  <div class="col-md-4 col-sm-6 wow fadeInUp mt-4" data-wow-delay="0.1s" *ngFor="let itm of mainPageData[0].acf.listastartimgblock let i = index"> 
+  <div class="col-md-6 wow fadeInUp mt-4" data-wow-delay="0.1s" *ngFor="let itm of mainPageData[0].acf.listastartimgblock let i = index"> 
+    <a routerLink="{{itm.acf.lank}}" title="{{itm.acf.lanktext}}" *ngIf="itm.acf.visa_lank">
     <div class="story-descb">
         <img src="{{itm.acf.bild.url}}" class="img-fluid" alt="...">
         <div class="cardbody">
@@ -97,6 +100,7 @@
         <a routerLink="{{itm.acf.lank}}" title="{{itm.acf.lanktext}}" *ngIf="itm.acf.visa_lank"><i class="fa fa-arrow-circle-o-right"></i> {{itm.acf.lanktext}}</a>
         </div>
     </div>
+  </a>
   </div> 
           
 </div>    
