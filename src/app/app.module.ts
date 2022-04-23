@@ -1,3 +1,4 @@
+import { seoPageDescriptionHandler } from './core/Models/SeoModel';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from 'ngx-cookieconsent';
@@ -31,7 +32,7 @@ import { ListaNyheterComponent } from './basblock/listblock/lista-nyheter/lista-
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
-    domain: 'dev.timmele.se' //'katalog.frontdata.se' //'localhost'// it is recommended to set your domain, for cookies to work properly
+    domain: 'localhost' //'dev.timmele.se' //'katalog.frontdata.se' //'localhost'// it is recommended to set your domain, for cookies to work properly
   },
   palette: {
     popup: {
@@ -113,6 +114,7 @@ const cookieConfig:NgcCookieConsentConfig = {
   ],
   providers: [
     Global,
+    seoPageDescriptionHandler
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Global } from './../core/Models/global';
 import { WpApiService } from './../core/Service/wp-api/wp-api.service';
@@ -15,10 +15,19 @@ test="rub_MASKINHALLAR"
     {'acf':[] }
   ];
 
-  constructor(private wpApi:WpApiService,private _router:Router, private glb:Global, private titleService: Title ) { }
+  constructor(private wpApi:WpApiService,
+    private _router:Router, 
+    private glb:Global, 
+    private titleService: Title,
+    private metaService: Meta ) { }
 
   ngOnInit(): void {
     this.titleService.setTitle(this.glb.HeadTitleMapper("Hem"));
+    this.metaService.updateTag(
+      {
+        name: "description", content: '' + this.glb.HeadMetaMapper('/hem')
+      }
+    )
     this.wpApi.currentPageDataHandler.subscribe(()=>{
       this.getMaindata();
     })
