@@ -22,7 +22,7 @@
             <div class="col-md-6">
                 <div class="single-news-p1-cont" >
                     <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
-                        <h2 id="rub_{{valPageblock.rubrik}}" [innerHtml]="valPageblock.rubrik"></h2>
+                        <h2 [id]="ancorlink(valPageblock.rubrik!)" [innerHtml]="valPageblock.rubrik"></h2>
                         
                         <div class="heading-border-light" *ngIf="valPageblock.rubrik" ></div>
                         
@@ -52,7 +52,7 @@
             <div class="col-md-6">
                 <div class="single-news-p1-cont" >
                     <div class="single-news-desc m-0 pt-1 pb-0 px-0" style="font-size: 2.2rem;">
-                        <h2 id="rub_{{valPageblock.rubrik}}" [innerHtml]="valPageblock.rubrik"></h2>
+                        <h2 [id]="ancorlink(valPageblock.rubrik!)" [innerHtml]="valPageblock.rubrik"></h2>
                         <div class="heading-border-light" *ngIf="valPageblock.rubrik"></div>                            
                         <div [innerHtml]="valPageblock.content"></div>
                         

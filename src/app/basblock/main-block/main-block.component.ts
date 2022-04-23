@@ -77,6 +77,10 @@ blockid:any=0;
     this._router.navigateByUrl(url);
     
   }
+
+  ancorlink(ancid:string){
+    return "rub_" + ancid.substring(0,4);
+  }
   // getMaindatabyID(pagedataID:number){
   //   this.wpApi.getBasSidaByID(pagedataID).subscribe(Response => {
 
